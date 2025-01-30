@@ -1,6 +1,4 @@
-package Question_08;
-
-public class Main {
+public class Q_08 {
     public static void main(String[] args) {
 
         for(int i=0; i<5; i++) {

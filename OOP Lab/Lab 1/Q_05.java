@@ -1,7 +1,6 @@
-package Question_05;
 import java.util.Scanner;
 
-public class Min {
+public class Q_05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
