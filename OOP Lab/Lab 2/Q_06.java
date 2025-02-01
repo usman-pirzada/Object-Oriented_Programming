@@ -19,7 +19,7 @@ public class Q_06 {
         System.out.println("Login Successfil! Welcome, " + username + "!");
 
         double balance = 0;
-        char value = 'Y';
+        char value;
 
         do {
             System.out.println("\n*************************************");
@@ -64,6 +64,7 @@ public class Q_06 {
 
             System.out.print("\nDo you want to continue? [y/Y]: ");
             value = sc.next().charAt(0);
+            
         } while(value == 'y' || value == 'Y');
 
         System.out.println("ThankYou for banking with us. Goodbye!");
