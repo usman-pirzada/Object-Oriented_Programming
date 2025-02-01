@@ -11,19 +11,21 @@ public class Q_03 {
         System.out.println("Start entering your items & prices to generate receipt (Enter \"done\" in items to terminate)");
         while(true) {
             System.out.print("Enter your Item: ");
-            String item = sc.next();
-            itemList.add(item);
+            String item = sc.nextLine();
 
-            if(item.equals("done")) break;
+            if(item.equalsIgnoreCase("done")) break;
+
+            itemList.add(item);
 
             System.out.print("Enter its price: ");
             float price = sc.nextFloat();
             priceList.add(price);
+            sc.nextLine();
         }
 
-        System.out.println("\n**************************************");
-        System.out.println("\t\t\t Invoice");
-        System.out.println("**************************************");
+        System.out.println("\n*******************************************");
+        System.out.println("\t\t Invoice");
+        System.out.println("*******************************************");
         System.out.println("Itemized List:");
         for (int i = 0; i < priceList.size(); i++) {
             System.out.println((i+1) + ". " + itemList.get(i) + "\t" + priceList.get(i));
