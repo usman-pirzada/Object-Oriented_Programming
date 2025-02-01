@@ -4,7 +4,7 @@ public class Q_09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        char proceed = 'y';
+        char proceed;
 
         do {
             System.out.print("What are the Total Marks of each subject: ");
@@ -49,6 +49,7 @@ public class Q_09 {
 
             System.out.println("Generate another report? (y/n)");
             proceed = sc.next().charAt(0);
+            
         } while(proceed == 'y');
     }
 }

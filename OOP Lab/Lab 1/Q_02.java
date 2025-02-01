@@ -5,6 +5,7 @@ public class Q_02 {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter an integer: ");
+        
         int num = sc.nextInt();
 
         if(num % 2 == 0) {
