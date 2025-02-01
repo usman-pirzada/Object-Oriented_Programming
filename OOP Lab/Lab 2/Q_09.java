@@ -12,22 +12,27 @@ public class Q_09 {
 
             int grandTotal = eachSubTot * 5;
 
+            int[] sub = new int[5];
+
             System.out.println("Enter Obtained Marks for 5 subjects:");
-            System.out.print("Subject 1: ");
-            int s1 = sc.nextInt();
-            System.out.print("Subject 2: ");
-            int s2 = sc.nextInt();
-            System.out.print("Subject 3: ");
-            int s3 = sc.nextInt();
-            System.out.print("Subject 4: ");
-            int s4 = sc.nextInt();
-            System.out.print("Subject 5: ");
-            int s5 = sc.nextInt();
+            for (int i = 0; i < 5; i++) {
+                System.out.print("Subject " + (i+1) + ": ");
+                sub[i] = sc.nextInt();
+                if(sub[i] > eachSubTot) {
+                    System.out.println("Obtained marks can not be greater than Total Marks! Enter Again:");
+                    i--;
+                }
+            }
 
-            int total = s1 + s2 + s3 + s4 + s5;
-            float percent = (float) (total / grandTotal * 100);
+            int total = 0;
+            
+            for (int eachSub : sub) {
+                total += eachSub;
+            }
+            
+            float percent = (total / (float) grandTotal) * 100; // It [(float) (total / grandTotal * 100)] will not work
 
-            System.out.println("Grade Report");
+            System.out.println("\nGrade Report");
             System.out.println("Total Marks: " + total);
             System.out.println("Percentage: " + percent);
             System.out.print("Grade: ");
