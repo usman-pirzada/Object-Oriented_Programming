@@ -6,9 +6,11 @@ public class Q_09 {
 
         char proceed = 'y';
 
-        do{
+        do {
             System.out.print("What are the Total Marks of each subject: ");
-            int grandTotal = sc.nextInt();
+            int eachSubTot = sc.nextInt();
+
+            int grandTotal = eachSubTot * 5;
 
             System.out.println("Enter Obtained Marks for 5 subjects:");
             System.out.print("Subject 1: ");
@@ -47,5 +49,6 @@ public class Q_09 {
 
             System.out.println("Generate another report? (y/n)");
             proceed = sc.next().charAt(0);
-    } while(proceed == 'y');
+        } while(proceed == 'y');
+    }
 }
