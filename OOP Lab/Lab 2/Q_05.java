@@ -31,6 +31,6 @@ public class Q_05 {
         System.out.println("Total number of students: " + numOfSt);
         System.out.println("Average grade: " + avg);
         System.out.println("Number of students who passed: " + passed);
-        System.out.println("Number of students who failed: " + failed);
+        System.out.println("Number of students who failed (grade < 60): " + failed);
     }
 }
