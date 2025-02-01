@@ -47,6 +47,5 @@ public class Q_07 {
 
         } while(proceed == 'y' || proceed == 'Y');
 
-        sc.close();
     }
 }
