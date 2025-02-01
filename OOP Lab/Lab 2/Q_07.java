@@ -4,7 +4,7 @@ public class Q_07 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        char proceed = 'y';
+        char proceed;
 
         do{
             String[] books = new String[5];
@@ -12,7 +12,12 @@ public class Q_07 {
             System.out.println("Enter the titles of 5 books being borrowed:");
             for (int i = 0; i < 5; i++) {
                 System.out.print("Book " + (i+1) + ": ");
-                books[i] = sc.next();
+                books[i] = sc.nextLine();
+
+                if(books[i].isBlank()) {
+                    System.out.println("\n Book title can not be empty. Enter again: ");
+                    i--;
+                }
             }
             
             System.out.println("\nLIBRARY RECEIPT");
@@ -27,7 +32,10 @@ public class Q_07 {
 
             while (true) { 
                 overdueBooks = sc.nextInt();
-                if(overdueBooks <= 5) break;
+                sc.nextLine(); // consume the newline character
+                if(overdueBooks <= 5 && overdueBooks >= 0) break;
+                
+                System.out.println("Invalid Input! Enter Again: ");
             }
 
             int overdueFine = overdueBooks * 2;
