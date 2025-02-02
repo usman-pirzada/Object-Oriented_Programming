@@ -30,14 +30,13 @@ public class Q_10 {
                     perf.add("Needs Improvement");
                 }
             } else if(emp_sal.get(i) > 5000) {
-                if (true) {
+                if (emp_attend.get(i) > 80) {
                     perf.add("Satisfactory");
-                } else {
+                } else if(emp_attend.get(i) >= 0) {
                     perf.add("Needs Improvement");
                 }
-            } else if(emp_sal.get(i) >= 0) {
-                    perf.add("Needs Improvement");
-            }
+            } else if(emp_sal.get(i) >= 0) 
+                perf.add("Needs Improvement");
 
             System.out.println("Result: " + perf.get(i));
         }
