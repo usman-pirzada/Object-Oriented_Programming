@@ -19,17 +19,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", jobRequired='" + jobRequired + '\'' +
-                ", skills=" + skills +
-                '}';
-    }
-
-    // Methods
-    static void displayDetails(ArrayList<Student> students) {
-        for(Object st: students) {
-            System.out.println(st);
-        }
+        return name;
     }
 }

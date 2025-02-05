@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Stadium> stadiums = new ArrayList<>();
-//        Stadium[] s = new Stadium[];
 
         Scanner sc = new Scanner(System.in);
 
