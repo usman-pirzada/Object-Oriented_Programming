@@ -15,7 +15,7 @@ public class Company {
     void scheduleInterview(Student students) {
         boolean flag;
 
-        if(jobRole.equals(students.jobRole)) {
+        if(jobRole.equals(students.jobRequired)) {
             int i=0;
 
             for(String studentSkills: students.skills) {
@@ -25,7 +25,7 @@ public class Company {
         }
     }
 
-    void displayCompanyDetails() {
+    static void displayCompanyDetails() {
 
     }
 }
