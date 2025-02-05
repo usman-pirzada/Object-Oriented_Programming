@@ -51,7 +51,7 @@ public class Main {
                         break;
                     }
 
-                    for (int i = 0; i < 2; i++) {
+//                    for (int i = 0; i < 2; i++) {
 //                        String compName = company[i].scheduleInterview(students.get(num));
 //                        if(compName != null) {
 //                            System.out.println("-> " + compName);
