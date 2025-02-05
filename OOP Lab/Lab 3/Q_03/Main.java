@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         // Hardcoded Companies
         Company[] company = new Company[2];
@@ -21,11 +22,9 @@ public class Main {
         students.add(new Student("Nadeem", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "React"))));
 
         while (true) {
-            Scanner sc = new Scanner(System.in);
-
             System.out.println("\nSelect an option to proceed:");
             System.out.println("1) Schedule an interview");
-            System.out.println("2) Display companies details");
+            System.out.println("2) Display all companies details");
             System.out.println("3) View All Scheduled Interviews");
             System.out.println("3) Exit");
             int option = sc.nextInt();
@@ -36,46 +35,46 @@ public class Main {
                         System.out.println((i+1) + ") " + students.get(i));
                     }
 
-                    System.out.println("For which student do you want to schedule interview:");
-                    int num = (sc.nextInt()) - 1;
-                    if(num > students.size() || num < 0) {
-                        System.out.println("Input Invalid!!");
-                        break;
+                    System.out.print("For which student do you want to schedule interview: ");
+                    int stNum = (sc.nextInt());
+                    if(stNum > students.size() || stNum < 0) {
+                        System.out.println("\n Input Invalid!!");
+                        continue;
                     }
+                    stNum--;
 
                     System.out.println("Select company to schedule interview with:");
-                    Company.displayAllCompaniesDetails(company);
-                    num = sc.nextInt();
-                    if(num > company.length || num < 0) {
-                        System.out.println("Input Invalid!!");
-                        break;
+                    for (int i = 0; i < company.length; i++) {
+                        System.out.println((i+1) + ") " + company[i].name);
                     }
+                    int cmpNum = sc.nextInt();
+                    if(cmpNum > company.length || cmpNum < 0) {
+                        System.out.println("\n Input Invalid!!");
+                        continue;
+                    }
+                    cmpNum--;
 
-//                    for (int i = 0; i < 2; i++) {
-//                        String compName = company[i].scheduleInterview(students.get(num));
-//                        if(compName != null) {
-//                            System.out.println("-> " + compName);
-//                        }
-//                    }
-
+                    if(company[cmpNum].scheduleInterview(students.get(stNum))) {
+                        System.out.println("Interview scheduled succssfully!");
+                    }
                     break;
 
                 case 2:
-                    Company.displayAllCompaniesDetails(company);
+                    Company.displayDetails(company);
                     break;
 
                 case 3:
+                    System.out.println(); // schedules
                     break;
 
                 case 4:
                     System.out.println("ThankYou for using this program. Good Bye!");
+                    sc.close();
                     return;
 
                 default:
                     System.out.println("Invalid Input!! Try Again.");
             }
-
-            sc.close();
         }
     }
 }

@@ -1,7 +1,5 @@
 package Q_03;
 
-import java.util.ArrayList;
-
 public class Company {
     String name;
     String industryType;
@@ -10,28 +8,29 @@ public class Company {
 
     // Constructor
     Company(String name, String industryType, String jobRole, String[] requiredSkills) {
-
+        this.name = name;
+        this.industryType = industryType;
+        this.jobRole = jobRole;
+        this.requiredSkills = requiredSkills.clone();
     }
 
     // Methods
     boolean scheduleInterview(Student student) {
         boolean flag = false;
 
-//        Student st = (Student) student;
-
-        if(jobRole.equals(student.jobRequired)) {
-            int i=0;
-
-            for(String studentSkills: student.skills) {
-                if(studentSkills.equals(requiredSkills[i])) flag=true;
-                i++;
+            for (String requiredSkill : this.requiredSkills) {
+            for (String studentSkills : student.skills) {
+                if (studentSkills.equals(requiredSkill)) {
+                    flag = true;
+                    break;
+                }
             }
         }
 
         return flag;
     }
 
-    static void displayAllCompaniesDetails(Company[] company) {
+    static void displayDetails(Company[] company) {
         for(Company comp: company) {
             System.out.println("\nCompany Name: " + comp.name);
             System.out.println(comp.industryType);
@@ -41,4 +40,8 @@ public class Company {
             }
         }
     }
+
+//    static void displayNames(Company[] company) {
+//
+//    }
 }
