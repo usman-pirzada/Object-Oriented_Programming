@@ -57,6 +57,7 @@ public class Main {
                     if(company[cmpNum].scheduleInterview(students.get(stNum))) {
                         System.out.println("Interview scheduled succssfully!");
                     }
+                    // TODO: In above if, the message has been displayed but actually not stored the schedule details yet
                     break;
 
                 case 2:
@@ -64,6 +65,15 @@ public class Main {
                     break;
 
                 case 3:
+                    // TODO: Add function or code to view all scheduled interview in the format below:
+                    /*
+                    Company Name:
+                    Job Role:
+                    Required Skills:
+                    Interview Scheduled:
+                        -Zeeshan (21K-3089)
+                        -Hamza (21K-4502)
+                    */
                     System.out.println(); // schedules
                     break;
 

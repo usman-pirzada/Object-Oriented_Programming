@@ -33,8 +33,9 @@ public class Company {
     static void displayDetails(Company[] company) {
         for(Company comp: company) {
             System.out.println("\nCompany Name: " + comp.name);
-            System.out.println(comp.industryType);
-            System.out.println(comp.jobRole);
+            System.out.println("Industry Type: " + comp.industryType);
+            System.out.println("Job Role: " + comp.jobRole);
+            System.out.println("Skills Required: ");
             for (String skills: comp.requiredSkills) {
                 System.out.println("   -" + skills);
             }
