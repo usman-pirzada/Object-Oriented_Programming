@@ -1,11 +1,10 @@
 package Q_03;
 
+import java.util.ArrayList;
+
 public class Student {
     String name;
     String jobRole;
-    String[] skills = new String[3];
 
-    public String toString() {
-        return ("Name: " + name + "\nJob Role: " + jobRole + "\nSkills: " + skills[0] + ", " + skills[1] + ", " + skills[2]);
-    }
+    ArrayList<String> skills = new ArrayList<>();
 }

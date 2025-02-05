@@ -6,6 +6,12 @@ public class Company {
     String jobRole;
     String[] requiredSkills = new String[3];
 
+    // Constructor
+    Company(String name, String industryType, String jobRole, String[] requiredSkills) {
+
+    }
+
+    // Methods
     void scheduleInterview(Student students) {
         boolean flag;
 
