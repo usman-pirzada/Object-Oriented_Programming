@@ -7,7 +7,16 @@ public class Company {
     String[] requiredSkills = new String[3];
 
     void scheduleInterview(Student students) {
+        boolean flag;
 
+        if(jobRole.equals(students.jobRole)) {
+            int i=0;
+
+            for(String studentSkills: students.skills) {
+                if(studentSkills.equals(requiredSkills[i])) flag=true;
+                i++;
+            }
+        }
     }
 
     void displayCompanyDetails() {
