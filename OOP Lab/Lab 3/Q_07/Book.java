@@ -14,7 +14,7 @@ public class Book {
 
     @Override
     public String toString() {
-
+        return "\nBook Title: \"" + title + "\"\nAuthor Name: " + author + "\nPrice: " + price;
     }
 
     // Methods
@@ -30,11 +30,11 @@ public class Book {
 
     }
 
-    public double getTitle() {
-
-    }
-
-    public double getAuthor() {
-
-    }
+//    public double getTitle() {
+//
+//    }
+//
+//    public double getAuthor() {
+//
+//    }
 }
