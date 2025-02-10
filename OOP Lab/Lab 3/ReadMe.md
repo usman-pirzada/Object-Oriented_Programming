@@ -106,3 +106,34 @@ Write a separate class `BookDemo` with a `main()` method that creates a `Book` t
 A weather monitoring system in Karachi records daily temperatures in an array. Due to a calibration issue, the recorded temperatures need to be adjusted by adding 2 degrees to each value. Your task is to implement a method that takes an array of temperatures, updates each value by adding 2, and displays both the original and modified temperatures. This adjustment ensures accurate weather reports for the week, helping meteorologists provide precise forecasts for Karachi’s climate.
 
 **Example Output**:
+---
+
+## **Question 9: Discount Calculator**
+A retail store is running a special discount offer on selected items. The store has a list of product prices, and all products need a 10% discount applied. Your task is to write a Java program that stores the prices in an array, applies a 10% discount to each price, and then displays the original and discounted prices. This helps customers see the difference in pricing during the sale period.
+
+**Example Output**:
+---
+
+## **Question 10: Student Enrollment System**
+FAST NUCES Karachi Campus maintains a record of students enrolled in a course. The system should allow students to register, update their details, or withdraw from the course. Your task is to:  
+1. Implement a system where students can enroll by adding their names to the record.  
+2. Provide an option to update a student’s name if there’s a correction.  
+3. Enable removal of a student from the record if they withdraw.  
+4. Display the current list of enrolled students.  
+
+This system ensures efficient student record management and allows for easy modifications during the academic semester at FAST NUCES Karachi Campus.
+
+---
+
+## **Question 11: Gym Membership System**
+A gym in Karachi keeps track of its active members and their details. Members can join, update their names, or cancel their memberships at any time. Your task is to:  
+1. Allow new members to register by adding their names to the system.  
+2. Provide an option to update an existing member’s name if needed.  
+3. Implement a feature to remove a member who cancels their subscription.  
+4. Display the current list of active members.  
+
+This system helps the gym effectively manage its membership records while ensuring up-to-date information.
+
+---
+
+**Thank you!**
