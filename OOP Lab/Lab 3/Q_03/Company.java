@@ -5,6 +5,7 @@ public class Company {
     String industryType;
     String jobRole;
     String[] requiredSkills = new String[3];
+    ArrayList<String> scheduledStudents = new ArrayList<>(); // todo: review
 
     // Constructor
     Company(String name, String industryType, String jobRole, String[] requiredSkills) {
@@ -14,7 +15,7 @@ public class Company {
         this.requiredSkills = requiredSkills.clone();
     }
 
-    // Methods
+    // Methods // todo: scheduledStudents
     boolean scheduleInterview(Student student) {
         boolean flag = false;
 
