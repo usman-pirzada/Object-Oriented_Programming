@@ -18,4 +18,9 @@ public class Student {
         this.jobRequired = jobRequired;
         this.skills = skills;
     }
+
+    @Override
+    public String toString() {
+        return this.name + " (" + this.rollNo + ") {Skills: " + this.skills + "}";
+    }
 }

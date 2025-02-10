@@ -22,11 +22,12 @@ public class Main {
         students.add(new Student("Nadeem", "23K-5446", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "React"))));
 
         while (true) {
-            System.out.println("\nSelect an option to proceed:");
+            System.out.println("\n\t\tMenu");
             System.out.println("1) Schedule an interview");
             System.out.println("2) Display all companies details");
             System.out.println("3) View All Scheduled Interviews");
             System.out.println("4) Exit");
+            System.out.print("Enter a number to select an option: ");
             int option = sc.nextInt();
             switch (option) {
                 case 1: // Schedule Interview
@@ -74,7 +75,8 @@ public class Main {
                         System.out.println("Interview Scheduled:");
                         if(company[i].scheduledStudents.isEmpty()) {
                             System.out.println("   No Interview Scheduled!!");
-                            break;
+                            System.out.println("\n----------------------------------");
+                            continue;
                         }
 
                         for (int j = 0; j < company[i].scheduledStudents.size(); j++) {

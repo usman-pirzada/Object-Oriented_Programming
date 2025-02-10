@@ -74,14 +74,14 @@ public class Main {
                     while (true) {
                         System.out.print("Enter Item's Name: ");
                         Item.itemsInCard.add(sc.next());
-                        if(Item.itemsInCard.get(Item.itemsInCard.size() - 1).equals("null")) break; // todo: now // if(Item.itemsInCard.getLast().equals("null")) break; --> Stopped Working
+                        if(Item.itemsInCard.getLast().equals("null")) break;    // For jdk below 21 version ".get(Item.itemsInCard.size() - 1)" can be used
 
-                        int foundIndex = Item.searchItem(Item.itemsInCard.get(Item.itemsInCard.size() - 1), items); // todo: now // if(Item.itemsInCard.getLast().equals("null")) break; --> Stopped Working
+                        int foundIndex = Item.searchItem(Item.itemsInCard.getLast(), items); // For jdk below 21 version ".get(Item.itemsInCard.size() - 1)" can be used
                         if(foundIndex != -1) {
                             System.out.println("Enter Quantity: ");
                             Item.purchasedQty.add(sc.nextInt());
                         } else {
-                            Item.itemsInCard.remove(Item.itemsInCard.size() - 1);   // todo: now, .removeLast not worked
+                            Item.itemsInCard.removeLast();  // For jdk below 21 version ".remove(Item.itemsInCard.size() - 1)" can be used
                             System.out.println("Item not found in stock!!");
                         }
                     }
@@ -92,7 +92,7 @@ public class Main {
                 case 4: // Update Stock/Price    // todo:
                     // todo: update stock/prices fn
                     Item.displayStockedItems(items);
-                    items.get(0).updateStock(sc);
+                    items.get(0).updateStock(sc);   // todo:
                     break;
 
                 case 5: // Exit
