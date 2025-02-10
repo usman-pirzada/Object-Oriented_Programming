@@ -15,21 +15,21 @@ public class Main {
 
         // Hardcoded Students
         ArrayList<Student> students = new ArrayList<>();
-        students.add(new Student("Zeeshan", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "C++"))));
-        students.add(new Student("Abuzar", "Data Analyst", new ArrayList<>(Arrays.asList("Typescript", "Machine Learning"))));
-        students.add(new Student("Nabeel", "Software Engineer", new ArrayList<>(Arrays.asList("Machine Learning", "C++"))));
-        students.add(new Student("Adeel", "Data Analyst", new ArrayList<>(Arrays.asList("Power BI", "C++"))));
-        students.add(new Student("Nadeem", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "React"))));
+        students.add(new Student("Zeeshan", "20K-4012", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "C++"))));
+        students.add(new Student("Abuzar", "21K-3576", "Data Analyst", new ArrayList<>(Arrays.asList("Typescript", "Machine Learning"))));
+        students.add(new Student("Nabeel", "22K-1022", "Software Engineer", new ArrayList<>(Arrays.asList("Machine Learning", "C++"))));
+        students.add(new Student("Adeel", "21K-2312", "Data Analyst", new ArrayList<>(Arrays.asList("Power BI", "C++"))));
+        students.add(new Student("Nadeem", "23K-5446", "Software Engineer", new ArrayList<>(Arrays.asList("Python", "React"))));
 
         while (true) {
             System.out.println("\nSelect an option to proceed:");
             System.out.println("1) Schedule an interview");
             System.out.println("2) Display all companies details");
             System.out.println("3) View All Scheduled Interviews");
-            System.out.println("3) Exit");
+            System.out.println("4) Exit");
             int option = sc.nextInt();
             switch (option) {
-                case 1:
+                case 1: // Schedule Interview
                     System.out.println();
                     for (int i = 0; i < students.size(); i++) {
                         System.out.println((i+1) + ") " + students.get(i));
@@ -56,32 +56,18 @@ public class Main {
 
                     if(company[cmpNum].scheduleInterview(students.get(stNum))) {
                         System.out.println("Interview scheduled succssfully!");
+                    } else {
+                        System.out.println("Unable to schedule interview! (No skills matched with the company's requirements.)");
                     }
-                    // TODO: In above if, the message has been displayed but actually not stored the schedule details yet
+
                     break;
 
-                case 2:
+                case 2: // Display Company Details
                     Company.displayDetails(company);
                     break;
 
-                case 3:
-                    // TODO: Add function or code to view all scheduled interview in the format below:
-                    /*
-                    Company Name:
-                    Job Role:
-                    Required Skills:
-                    Interview Scheduled:
-                        -Zeeshan (21K-3089)
-                        -Hamza (21K-4502)
-                    */
-                    // todo: now, OR
-                    /*
-                    Company Name:
-                    Interview Scheduled:
-                        -Zeeshan (21K-3089)
-                        -Hamza (21K-4502)
-                    */
-                    System.out.println("-----------------------------");
+                case 3: // Display Sheduled Events
+                    System.out.println("\n----------------------------------");
                     System.out.println("   Scheduled Interviews");
                     for (int i = 0; i < company.length; i++) {
                         System.out.println("\nCompany Name: " + company[i].name);
@@ -90,15 +76,16 @@ public class Main {
                             System.out.println("   No Interview Scheduled!!");
                             break;
                         }
+
                         for (int j = 0; j < company[i].scheduledStudents.size(); j++) {
-                            System.out.println("   -" + company[i].scheduledStudents.get(j));  // todo: now
+                            System.out.println("   -" + company[i].scheduledStudents.get(j));
                         }
+                        System.out.println("\n----------------------------------");
                     }
-                    System.out.println("-----------------------------");
-                    System.out.println(); // schedules
+
                     break;
 
-                case 4:
+                case 4: // Exit
                     System.out.println("ThankYou for using this program. Good Bye!");
                     sc.close();
                     return;

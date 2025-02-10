@@ -74,14 +74,14 @@ public class Main {
                     while (true) {
                         System.out.print("Enter Item's Name: ");
                         Item.itemsInCard.add(sc.next());
-                        if(Item.itemsInCard.getLast().equals("null")) break;
+                        if(Item.itemsInCard.get(Item.itemsInCard.size() - 1).equals("null")) break; // todo: now // if(Item.itemsInCard.getLast().equals("null")) break; --> Stopped Working
 
-                        int foundIndex = Item.searchItem(Item.itemsInCard.getLast(), items);
+                        int foundIndex = Item.searchItem(Item.itemsInCard.get(Item.itemsInCard.size() - 1), items); // todo: now // if(Item.itemsInCard.getLast().equals("null")) break; --> Stopped Working
                         if(foundIndex != -1) {
                             System.out.println("Enter Quantity: ");
                             Item.purchasedQty.add(sc.nextInt());
                         } else {
-                            Item.itemsInCard.removeLast();
+                            Item.itemsInCard.remove(Item.itemsInCard.size() - 1);   // todo: now, .removeLast not worked
                             System.out.println("Item not found in stock!!");
                         }
                     }

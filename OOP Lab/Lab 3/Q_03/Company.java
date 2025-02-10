@@ -7,7 +7,7 @@ public class Company {
     String industryType;
     String jobRole;
     String[] requiredSkills = new String[3];
-    ArrayList<String> scheduledStudents = new ArrayList<>(); // todo: review
+    ArrayList<String> scheduledStudents = new ArrayList<>();    // Holds scheduled-interview students & their rollno as String
 
     // Constructor
     Company(String name, String industryType, String jobRole, String[] requiredSkills) {
@@ -17,15 +17,15 @@ public class Company {
         this.requiredSkills = requiredSkills.clone();
     }
 
-    // Methods // todo: scheduledStudents
+    // Methods
     boolean scheduleInterview(Student student) {
         boolean flag = false;
 
-            for (String requiredSkill : this.requiredSkills) {
+        for (String requiredSkill : this.requiredSkills) {
             for (String studentSkills : student.skills) {
                 if (studentSkills.equals(requiredSkill)) {
                     flag = true;
-                    this.scheduledStudents.add(student.name);   // todo: now
+                    this.scheduledStudents.add(student.name + " (" + student.rollNo + ")");
                     break;
                 }
             }
@@ -35,22 +35,16 @@ public class Company {
     }
 
     static void displayDetails(Company[] company) {
-        for(Company comp: company) {
-            System.out.println("\nCompany Name: " + comp.name);
+        System.out.println("\n----------------------------------");
+        for (Company comp : company) {
+            System.out.println("Company Name: " + comp.name);
             System.out.println("Industry Type: " + comp.industryType);
             System.out.println("Job Role: " + comp.jobRole);
             System.out.println("Skills Required: ");
-            for (String skills: comp.requiredSkills) {
+            for (String skills : comp.requiredSkills) {
                 System.out.println("   -" + skills);
             }
-            System.out.println("Interviews Scheduled with:");
-            for(String studentName: comp.scheduledStudents) {
-                System.out.println("   -" + studentName);
-            }
+            System.out.println("----------------------------------");
         }
     }
-
-//    static void displayNames(Company[] company) {
-//
-//    }
 }

@@ -6,19 +6,16 @@ import java.util.Arrays;
 
 public class Student {
     String name;
+    String rollNo;
     String jobRequired;
 
     ArrayList<String> skills = new ArrayList<>();
 
     //Constructor
-    Student(String name, String jobRequired, ArrayList<String> skills) {
+    Student(String name, String rollNo, String jobRequired, ArrayList<String> skills) {
         this.name = name;
+        this.rollNo = rollNo;
         this.jobRequired = jobRequired;
         this.skills = skills;
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }
