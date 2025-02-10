@@ -75,7 +75,7 @@ public class Item {
         System.out.println();
         for(int i=0; i<items.size(); i++) {
             System.out.print(" " + (i+1) + ") ");
-            System.out.printf("%15s %8d %10f", items.get(i).itemName, items.get(i).stockQuantity, items.get(i).price);
+            System.out.printf("%15s %8d %10.2f", items.get(i).itemName, items.get(i).stockQuantity, items.get(i).price);
             System.out.println();
         }
     }
@@ -101,7 +101,7 @@ public class Item {
         for(int i=0; i<Item.itemsInCard.size(); i++) {
             // Print List of purchased items with qty & price
             System.out.print(" " + (i+1) + ") ");
-            System.out.printf("%15s %8d %10f", Item.itemsInCard.get(i), Item.purchasedQty.get(i), Item.purchasedPrice.get(i));
+            System.out.printf("%15s %8d %10.2f", Item.itemsInCard.get(i), Item.purchasedQty.get(i), Item.purchasedPrice.get(i));
             System.out.println();
 
             // Total price calculation

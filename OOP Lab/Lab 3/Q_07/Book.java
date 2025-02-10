@@ -14,27 +14,19 @@ public class Book {
 
     @Override
     public String toString() {
-        return "\nBook Title: \"" + title + "\"\nAuthor Name: " + author + "\nPrice: " + price;
+        return "\nBook Title: " + title + "\nAuthor Name: " + author + "\nPrice: " + price;
     }
 
-    // Methods
-    public void setTitle(String title) {
-
+    // Getters
+    String getTitle() {
+        return this.title;
     }
 
-    public void setAuthor(String author) {
-
+    String getAuthor() {
+        return this.author;
     }
 
-    public void setPrice(double price) {
-
+    double getPrice() {
+        return this.price;
     }
-
-//    public double getTitle() {
-//
-//    }
-//
-//    public double getAuthor() {
-//
-//    }
 }

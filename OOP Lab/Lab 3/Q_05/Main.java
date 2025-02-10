@@ -8,16 +8,17 @@ public class Main {
 
         ArrayList<Item> items = new ArrayList<>();
 
-        items.add(new Item(1, "Mango", 3, 150));
-        items.add(new Item(2, "Gala Biscuit", 10, 100));
+        items.add(new Item(1, "Biscuit", 3, 150));
+        items.add(new Item(2, "Chocolate", 10, 100));
         items.add(new Item(3, "Lays", 25, 60));
         items.add(new Item(4, "Salanty", 40, 30));
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("\nWelcome to Inventory Management System!");
+
         while (true) {
-            System.out.println("\nWelcome to Inventory Management System!");
-            System.out.println("Enter a number to select an option:");
+            System.out.println("\n\t\tMenu");
             System.out.println(" 1) Search Item");
             System.out.println(" 2) Display Stock Items");
             System.out.println(" 3) Purchase Items");
