@@ -1,7 +1,5 @@
 package Q_02;
 
-import Q_01.Stadium;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
