@@ -91,6 +91,11 @@ public class Item {
     }
 
     static void generateBill(ArrayList<Item> items) {
+        if (items.isEmpty()) {
+            System.out.println("No items to generate a bill for.");
+            return;
+        }
+
         float tot_price = 0;
 
         System.out.println();

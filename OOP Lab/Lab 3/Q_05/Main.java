@@ -71,16 +71,23 @@ public class Main {
                 case 3: // Purchase
                     System.out.println("\t ********** Items List **********");
                     Item.displayStockedItems(items);
-                    System.out.print("\nWhich item do you want to purchase? (Start entering items & Write null in item's name to end): ");
+                    System.out.print("\nWhich item do you want to purchase? (Start entering items & Write \"end\" in item's name to end): ");
                     while (true) {
                         System.out.print("Enter Item's Name: ");
                         Item.itemsInCard.add(sc.next());
-                        if(Item.itemsInCard.getLast().equals("null")) break;    // For jdk below 21 version ".get(Item.itemsInCard.size() - 1)" can be used
+                        if(Item.itemsInCard.getLast().equalsIgnoreCase("end")) break;    // For jdk below 21 version ".get(Item.itemsInCard.size() - 1)" can be used
 
                         int foundIndex = Item.searchItem(Item.itemsInCard.getLast(), items); // For jdk below 21 version ".get(Item.itemsInCard.size() - 1)" can be used
                         if(foundIndex != -1) {
-                            System.out.println("Enter Quantity: ");
-                            Item.purchasedQty.add(sc.nextInt());
+                        System.out.print("Enter Quantity: ");
+                        int qty = sc.nextInt();
+                        if (qty > items.get(foundIndex).getStockQuantity()) {
+                            System.out.println("Unable to add to card!! (No of items exceeded the stock limit)");
+                            continue;
+                        }
+
+                        Item.purchasedQty.add(qty);
+                            items.get(foundIndex).setStockQuantity(items.get(foundIndex).getStockQuantity() - qty);
                         } else {
                             Item.itemsInCard.removeLast();  // For jdk below 21 version ".remove(Item.itemsInCard.size() - 1)" can be used
                             System.out.println("Item not found in stock!!");
