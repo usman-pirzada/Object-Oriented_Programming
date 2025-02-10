@@ -1,10 +1,13 @@
 package Q_03;
 
+import java.util.ArrayList;
+
 public class Company {
     String name;
     String industryType;
     String jobRole;
     String[] requiredSkills = new String[3];
+    ArrayList<String> scheduledStudents = new ArrayList<>(); // todo: review
 
     // Constructor
     Company(String name, String industryType, String jobRole, String[] requiredSkills) {
@@ -14,7 +17,7 @@ public class Company {
         this.requiredSkills = requiredSkills.clone();
     }
 
-    // Methods
+    // Methods // todo: scheduledStudents
     boolean scheduleInterview(Student student) {
         boolean flag = false;
 
@@ -22,6 +25,7 @@ public class Company {
             for (String studentSkills : student.skills) {
                 if (studentSkills.equals(requiredSkill)) {
                     flag = true;
+                    this.scheduledStudents.add(student.name);   // todo: now
                     break;
                 }
             }
@@ -38,6 +42,10 @@ public class Company {
             System.out.println("Skills Required: ");
             for (String skills: comp.requiredSkills) {
                 System.out.println("   -" + skills);
+            }
+            System.out.println("Interviews Scheduled with:");
+            for(String studentName: comp.scheduledStudents) {
+                System.out.println("   -" + studentName);
             }
         }
     }

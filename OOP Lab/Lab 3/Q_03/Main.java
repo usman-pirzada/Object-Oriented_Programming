@@ -74,6 +74,27 @@ public class Main {
                         -Zeeshan (21K-3089)
                         -Hamza (21K-4502)
                     */
+                    // todo: now, OR
+                    /*
+                    Company Name:
+                    Interview Scheduled:
+                        -Zeeshan (21K-3089)
+                        -Hamza (21K-4502)
+                    */
+                    System.out.println("-----------------------------");
+                    System.out.println("   Scheduled Interviews");
+                    for (int i = 0; i < company.length; i++) {
+                        System.out.println("\nCompany Name: " + company[i].name);
+                        System.out.println("Interview Scheduled:");
+                        if(company[i].scheduledStudents.isEmpty()) {
+                            System.out.println("   No Interview Scheduled!!");
+                            break;
+                        }
+                        for (int j = 0; j < company[i].scheduledStudents.size(); j++) {
+                            System.out.println("   -" + company[i].scheduledStudents.get(j));  // todo: now
+                        }
+                    }
+                    System.out.println("-----------------------------");
                     System.out.println(); // schedules
                     break;
 

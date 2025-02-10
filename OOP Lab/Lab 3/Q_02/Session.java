@@ -7,14 +7,14 @@ public class Session {
     String sessionTitle;
     String speakerName;
     double duration;
-    int roomNumber;
+    String room;
 
     // Constructor
-    Session(String sessionTitle, String speakerName, double duration, int roomNumber) {
+    Session(String sessionTitle, String speakerName, double duration, String room) {
         this.sessionTitle = sessionTitle;
         this.speakerName = speakerName;
         this.duration = duration;
-        this.roomNumber = roomNumber;
+        this.room = room;   // todo: Shallow copy DONE
     }
 
     // Methods
@@ -22,7 +22,7 @@ public class Session {
         String sessionTitle;
         String speakerName;
         double duration;
-        int roomNumber;
+        String room;
 
         Scanner sc = new Scanner(System.in);
 
@@ -30,12 +30,12 @@ public class Session {
         sessionTitle = sc.nextLine();
         System.out.print("Enter Speaker Name: ");
         speakerName = sc.nextLine();
-        System.out.print("Enter Duration: ");
+        System.out.print("Enter Duration (in hours): ");
         duration = sc.nextDouble();
-        System.out.print("Enter Room Number: ");
-        roomNumber = sc.nextInt();
+        System.out.print("Enter Room: ");
+        room = sc.next();
 
-        sessions.add(new Session(sessionTitle, speakerName, duration, roomNumber));
+        sessions.add(new Session(sessionTitle, speakerName, duration, room));
         System.out.println("Session Added Successfully!");
     }
 
@@ -49,7 +49,7 @@ public class Session {
             System.out.println("Title: " + sessionTitle);
             System.out.println("Speaker Name: " + speakerName);
             System.out.println("Duration (in hours): " + duration);
-            System.out.println("Room Number: " + roomNumber);
+            System.out.println("Room: " + room);
             i++;
         }
     }
