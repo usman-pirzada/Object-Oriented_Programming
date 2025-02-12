@@ -33,7 +33,7 @@ A company requires a payroll system to efficiently manage its employees' salary 
 ---
 
 ## QUESTION# 5
-A smart home automation system is responsible for managing multiple connected devices such as lights, air conditioners, and fans. Each device has a unique identifier, a specific type, power consumption in watts, and an operational status indicating whether it is switched on or off. The system should allow devices to be added either with default values or with custom specifications. A central function should calculate the total power consumption by summing up the power usage of all active devices. As devices are removed from the system, their respective records should be deleted, and a message should confirm their removal, ensuring efficient resource management within the system.
+A smart home automation system is responsible for managing multiple connected devices such as lights, air conditioners, and fans. Each device has a unique identifier, a specific type, power consumption in watts, and an operational deviceStatus indicating whether it is switched on or off. The system should allow devices to be added either with default values or with custom specifications. A central function should calculate the total power consumption by summing up the power usage of all active devices. As devices are removed from the system, their respective records should be deleted, and a message should confirm their removal, ensuring efficient resource management within the system.
 
 ### Sample Output:
 ---
