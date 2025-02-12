@@ -118,6 +118,6 @@ Sarah is developing a Java application for a bookstore. She wants to create a Bo
     - "Mystery Novel" with an unknown author and default price.
 3. Print the details of each book.
 
-### Other Questions:
+## Other Questions:
 1. How does constructor overloading help in this scenario?
 2. What would happen if Java did not support constructor overloading in this case?
