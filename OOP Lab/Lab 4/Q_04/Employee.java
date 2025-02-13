@@ -30,4 +30,9 @@ public class Employee {
     public String toString() {
         return "ID: " + id + "\nName: " + name + "\nBasic Salary: " + basicSalary + "\nTax Deduction: " + taxPercent + "%\nBonus: " + bonusAmount + "\nNet Salary: " + netSalary;
     }
+
+    @Override
+    protected void finalize() {
+        System.out.println("\nEmployee record deleted: " + this.id);
+    }
 }

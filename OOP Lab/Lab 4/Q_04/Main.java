@@ -29,5 +29,15 @@ public class Main {
 
         System.out.println("\nNew Employee Added:");
         System.out.println(e2);
+
+        System.out.println();
+
+        e1 = null;
+        System.out.println("Memory for the bonus amount released!");
+
+        e2 = null;
+        System.out.println("Memory for the bonus amount released!");
+
+        System.gc();
     }
 }
