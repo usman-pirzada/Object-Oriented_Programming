@@ -5,6 +5,7 @@ public class Book {
     String author;
     double price;
 
+    // Parameterized Constructors
     Book(String title) {
         this.title = title;
         this.author = "Unknown";
@@ -14,7 +15,6 @@ public class Book {
     Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.price = 0.0;
     }
 
     Book(String title, String author, double price) {
@@ -25,6 +25,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "\nTitle: " + title + ", Author: " + author + ", Price: " + price;
+        return "Book Title: " + title + ", Author: " + author + ", Price: $" + price;
     }
 }
