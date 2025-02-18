@@ -1,4 +1,4 @@
-package Q_03;
+package Q_03_ERROR;
 
 import java.util.Scanner;
 
