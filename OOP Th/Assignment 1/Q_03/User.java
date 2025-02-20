@@ -1,12 +1,19 @@
 package Q_03;
 
+import java.util.ArrayList;
+
 public class User {
+    private String name;
     private int userID;
     private int age;
     private String email;
     private String licenseType; // Leraners, Intermediate, Full License || Motorbyke, car
 
     // ******** Getters ********
+    public String getName() {
+        return name;
+    }
+
     public int getUserID() {
         return userID;
     }
@@ -24,6 +31,10 @@ public class User {
     }
 
     // ******** Setters ********
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setUserID(int userID) {
         this.userID = userID;
     }

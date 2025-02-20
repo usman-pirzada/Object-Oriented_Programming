@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Mentor {
 
     // ***** Attributes *****
-    int ID;
-    String name;
-    int maxLearners;
-    Student[] assignedLearners = new Student[maxLearners];  // todo: see if it should be String/Student
-    ArrayList<String> sportsExpertise = new ArrayList<>();
+    private int ID;
+    private String name;
+    private int maxLearners;
+    private Student[] assignedLearners = new Student[maxLearners];  // todo: see if it should be String/Student
+    private ArrayList<String> sportsExpertise = new ArrayList<>();
 
     // ***** Methods *****
     void assignLearners(Student s) {    // Assign Student to a mentor if capacity available
@@ -25,5 +25,13 @@ public class Mentor {
 
     void provideGuidance() {    // Provide Guidance to your Learners
 
+    }
+
+    public ArrayList<String> getSportsExpertise() { // todo: auto created
+        return sportsExpertise;
+    }
+
+    public void setSportsExpertise(ArrayList<String> sportsExpertise) { // todo: auto created
+        this.sportsExpertise = sportsExpertise;
     }
 }
