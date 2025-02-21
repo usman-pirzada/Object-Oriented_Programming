@@ -11,9 +11,10 @@ public class Main {
         ArrayList<Vehicle> vehicles = new ArrayList<>();
 
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("\t\tWelcome to Vehicle Rental Service!\n");
         while (true) {
-            System.out.println("\t\tWelcome to Vehicle Rental Service!\n");
-            System.out.println("\tMenu");
+            System.out.println("\t\tMenu");
             System.out.println("1) Register your account");
             System.out.println("2) Book a vehicle on rent");
             System.out.println("3) Exit");
@@ -22,6 +23,7 @@ public class Main {
             switch (option) {
                 case 1:
                     users.add(new User());
+                    sc.nextLine();
                     System.out.println("Enter your name:");
                     users.getLast().setName(sc.nextLine());
 
@@ -31,10 +33,11 @@ public class Main {
                     users.getLast().setAge(sc.nextInt());
 
                     System.out.println("Enter your email address:");
+                    users.getLast().setEmail(sc.next());
 
                     while (true) {
                         System.out.println("Select your license type:");
-                        System.out.println(" 1) Learners\n 2) Intermediate\n 3) Full License\n 4) Exit");
+                        System.out.println(" 1) Learners\n 2) Intermediate\n 3) Full License");
                         System.out.print("Enter option number: ");
                         switch (sc.nextInt()) {
                             case 1:
@@ -42,22 +45,23 @@ public class Main {
                                 break;
 
                             case 2:
-                                users.getLast().setLicenseType("Interediate");
+                                users.getLast().setLicenseType("Intermediate");
                                 break;
 
                             case 3:
                                 users.getLast().setLicenseType("Full License");
                                 break;
 
-                            case 4:
-                                sc.close();
-                                return;
-
                             default:
-                                System.out.println("\n Invalid Input!!");
+                                System.out.println("\n Invalid Input!! Try Again.");
+                                continue;   // Continue while loop
                         }
+
+                        System.out.println("You have been registered successfully!");
+
+                        break;  // Breaking lower switch
                     }
-                    break;
+                    break;  // Breaking upper switch
 
                 case 2:
 
