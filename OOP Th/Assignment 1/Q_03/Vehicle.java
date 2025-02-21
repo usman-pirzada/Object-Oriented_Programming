@@ -1,11 +1,24 @@
 package Q_03;
 
+import java.util.ArrayList;
+
 public class Vehicle {
     private int model;
     private double price;
     private String licenseRequired; // todo:
     private String condition;   // new, old, ac, non-ac, etc
     private String type;    // manual, auto, hybrid, electrical
+
+    Vehicle() {
+    }
+
+    Vehicle(int model, double price, String licenseRequired, String condition, String type) {
+        this.model = model;
+        this.price = price;
+        this.licenseRequired = licenseRequired;
+        this.condition = condition;
+        this.type = type;
+    }
 
     // ***** Methods *****
     void viewVehicles() {

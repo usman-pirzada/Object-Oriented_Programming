@@ -59,4 +59,8 @@ public class User {
     void checkEligibility() {
 
     }
+
+    static boolean verifyID(int ID, ArrayList<User> users) {
+        return ID <= users.size() && ID > 0;
+    }
 }
