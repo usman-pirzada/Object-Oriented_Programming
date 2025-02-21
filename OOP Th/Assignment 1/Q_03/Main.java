@@ -12,12 +12,12 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\t\tWelcome to Vehicle Rental Service!\n");
-        while (true) {
+        System.out.println("\n\tWelcome to Vehicle Rental Service!\n");
+        do {
             System.out.println("\t\tMenu");
             System.out.println("1) Register your account");
             System.out.println("2) Book a vehicle on rent");
-            System.out.println("3) Exit");
+            System.out.println("3) View your rented vehicles");
             System.out.print("Enter an appropriate nummber to select the option: ");
             int option = sc.nextInt();
             switch (option) {
@@ -57,24 +57,28 @@ public class Main {
                                 continue;   // Continue while loop
                         }
 
-                        System.out.println("You have been registered successfully!");
+                        System.out.println("\n Your account have been created successfully with ID: " + users.getLast().getUserID());
 
                         break;  // Breaking lower switch
                     }
                     break;  // Breaking upper switch
 
                 case 2:
-
+                    users.get(0).viewVehicles();    // todo:
                     break;
 
                 case 3:
 
-                    sc.close();
-                    return;
+                    break;
 
                 default:
                     System.out.println("\n Invalid Input!!");
             }
-        }
+
+            System.out.print("\nWould you like to proceed with another operation? (y/n): ");
+            proceed = sc.next().charAt(0);
+        } while (proceed == 'y' || proceed == 'Y');
+
+        sc.close();
     }
 }
