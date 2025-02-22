@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        char proceed = 'y';
+        char proceed;
 
         ArrayList<Vehicle> vehicles = new ArrayList<>();
         vehicles.add(new Vehicle("Corolla", 2025, 30000, "Full License", "New", "Hybrid"));
