@@ -11,6 +11,12 @@ public class Student {
     ArrayList<String> sportsInterests = new ArrayList<>();
     int mentorAssigned; // Mentor index
 
+    Student() {
+
+    }
+
+    Student()
+
     // ***** Methods *****
     void updateSportsInterest(Sport s) {    // Update Sport Interests
 

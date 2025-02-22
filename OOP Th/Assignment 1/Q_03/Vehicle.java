@@ -10,9 +10,6 @@ public class Vehicle {
     private String condition;   // new, old, ac, non-ac, etc
     private String type;    // manual, auto, hybrid, electrical
 
-    Vehicle() {
-    }
-
     Vehicle(String name, int model, double price, String licenseRequired, String condition, String type) {
         this.name = name;
         this.model = model;
