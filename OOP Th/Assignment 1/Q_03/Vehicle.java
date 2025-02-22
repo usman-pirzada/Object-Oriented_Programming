@@ -3,6 +3,7 @@ package Q_03;
 import java.util.ArrayList;
 
 public class Vehicle {
+    private String name;
     private int model;
     private double price;
     private String licenseRequired; // todo:
@@ -12,7 +13,8 @@ public class Vehicle {
     Vehicle() {
     }
 
-    Vehicle(int model, double price, String licenseRequired, String condition, String type) {
+    Vehicle(String name, int model, double price, String licenseRequired, String condition, String type) {
+        this.name = name;
         this.model = model;
         this.price = price;
         this.licenseRequired = licenseRequired;
@@ -21,12 +23,18 @@ public class Vehicle {
     }
 
     // ***** Methods *****
-    void viewVehicles() {
-
+    static void viewVehicles(ArrayList<Vehicle> vehicles) {
+        for (int i = 0; i < vehicles.size(); i++) {
+            System.out.println(" " + (i+1) + ") Name: " + vehicles.get(i).name + ", Model: " + vehicles.get(i).model);
+        }
     }
 
     void displayRentalDetails() {   // Display the rental details and the vehicle selected
+        System.out.println("Name: " + name + ", Model: " + model + ", Rent Price: " + price + ", License Required: " + licenseRequired + ", Condition: " + condition + ", Type: " + type);
+    }
 
+    public String getName() {
+        return name;
     }
 
     public int getModel() {
@@ -47,5 +55,9 @@ public class Vehicle {
 
     public String getType() {
         return type;
+    }
+
+    static boolean verifyVehicleNo(int vehicleNo, ArrayList<Vehicle> vehicles) {
+        return vehicleNo <= vehicles.size() && vehicleNo > 0;
     }
 }
