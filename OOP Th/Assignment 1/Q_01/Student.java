@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Student {
 
-    // ***** Attributes *****
     private int id;
     private String name;
     private int age;

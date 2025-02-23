@@ -7,7 +7,7 @@ public class Sport {
     private int id;
     private String name;
     private String description;
-    private ArrayList<Skill> requiredSkills = new ArrayList<>();
+    private ArrayList<Skill> requiredSkills;
 
     Sport(int id, String name, String description, ArrayList<Skill> requiredSkills) {
         this.id = id;
