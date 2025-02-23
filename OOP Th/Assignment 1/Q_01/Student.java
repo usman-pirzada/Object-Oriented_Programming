@@ -39,11 +39,16 @@ public class Student {
         }
     }
 
-    void registerForMentorship(Mentor m) {  // Register for Mentorship  // todo: is it ok to add it twice, once in local & then in the class wale Mentor
+    void registerForMentorship(Mentor m) {   // Register for the Mentor
+        if(this.mentorAssigned != null) {
+            System.out.println("Can't register the student \"" + this + "\" as it already has registered to the mentor \"" + this.mentorAssigned + "\"!");
+            return;
+        }
+
         this.mentorAssigned = m;
         m.assignLearners(this);
 
-        System.out.println("Student \"" + this + "\" registered for the mentor \"" + m + "\" successfully!");
+        System.out.println("Student \"" + this + "\" registered to the mentor \"" + m + "\" successfully!");
     }
 
     void unregisterFromMentor(Mentor m) {  // Unregister from the Mentor  // todo: is it ok to add it twice, once in local & then in the class wale Mentor
