@@ -14,18 +14,18 @@ public class Skill {
     }
 
     @Override
-    public String toString() {
+    public String toString() {  // todo:
         return "ID: " + id +
                 "\nName: " + name +
                 "\nDescription: " + description;
     }
 
     // ***** Methods *****
-    void showSkillDetails() {   // Show a Skill's Details
-
-    }
-
-    void updateSkillDescription(String newDescription) {    // Update Skill Description
-
-    }
+//    void showSkillDetails() {   // Show a Skill's Details
+//
+//    }
+//
+//    void updateSkillDescription(String newDescription) {    // Update Skill Description
+//
+//    }
 }

@@ -9,7 +9,7 @@ public class Student {
     int id;
     String name;
     int age;
-    ArrayList<Sport> sportsInterests = new ArrayList<>();
+    ArrayList<Sport> sportsInterests;
 
     Student(int id, String name, int age, ArrayList<Sport> sportsInterests) {
         this.id =id;
@@ -18,24 +18,28 @@ public class Student {
         this.sportsInterests = sportsInterests;
     }
 
-    @Override
-    public String toString() {
-        return "ID: " + id +
-                "\nName: " + name +
-                "\nAge: " + age +
-                "\nSports Interests: " + Arrays.toString(sportsInterests.stream().toArray());
-    }
-
     // ***** Methods *****
-    void updateSportsInterest(Sport s) {    // Update Sport Interests
-
+    void viewStudentDetails() {
+        System.out.println("\nID: " + id + "\nName: " + name + "\nAge: " + age);
+        System.out.print("\nSports Interests: ");
+        for (int i = 0; i < sportsInterests.size(); i++) {
+            System.out.print(sportsInterests.get(i).name);
+            if (i < sportsInterests.size() - 1) {
+                System.out.print(", ");
+            }
+        }
     }
 
-    void viewMentorDetails() {  // View Mentor Details
+//    void registerForMentorship(Mentor m) {  // Register for Mentorship
+//
+//    }
 
-    }
+//    void updateSportsInterest(Sport s) {    // Update Sport Interests
+//
+//    }
 
-    void registerForMentorship(Mentor m) {  // Register for Mentorship
+//    void viewMentorDetails() {  // View Mentor Details
+//
+//    }
 
-    }
 }
