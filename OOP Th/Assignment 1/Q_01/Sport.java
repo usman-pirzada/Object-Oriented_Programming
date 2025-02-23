@@ -18,7 +18,7 @@ public class Sport {
 
     @Override
     public String toString() {
-        return name + " (" + id + ")";
+        return name + " (ID: " + id + ")";
     }
 
     // ***** Getter *****
@@ -45,6 +45,10 @@ public class Sport {
         System.out.println("Name: " + name);
         System.out.println("Description: " + description);
         System.out.print("Skills Required: ");
+        if(this.requiredSkills.isEmpty()) {
+            System.out.println("No Required Skills added yet!");
+            return;
+        }
         for (int i = 0; i < requiredSkills.size(); i++) {
             System.out.print(requiredSkills.get(i));
             if (i < requiredSkills.size() - 1) {

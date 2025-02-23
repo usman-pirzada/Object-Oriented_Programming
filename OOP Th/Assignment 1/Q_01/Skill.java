@@ -14,7 +14,7 @@ public class Skill {
 
     @Override
     public String toString() {  // todo:
-        return name + " (" + id + ")";
+        return name + " (ID: " + id + ")";
     }
 
     // ***** Methods *****

@@ -11,7 +11,7 @@ public class Mentor {
     private ArrayList<Sport> sportsExpertise;
     private Student[] assignedLearners = new Student[3];
 
-    Mentor(int id, String name, int maxLearners, ArrayList<Sport> sportsExpertise) {    // todo: dependency i.e, Student in constructor parameter
+    Mentor(int id, String name, int maxLearners, ArrayList<Sport> sportsExpertise) {    // todo: dependency i.e, Sport in constructor parameter; Will there be composition if we take a student for feeding in array; & what if we make both type of constructors
         this.id = id;
         this.name = name;
         this.maxLearners = maxLearners;
@@ -20,13 +20,18 @@ public class Mentor {
 
     @Override
     public String toString() {
-        return name + " (" + id + ")";
+        return name + " (ID: " + id + ")";
     }
 
     // **** Methods ****
     void viewMentorDetails() {
         System.out.println("\nID: " + id + "\nName: " + name + "\nMentorship Limit: " + maxLearners + " Learners");
         System.out.print("\nSports Expertise: ");
+        if(this.sportsExpertise.isEmpty()) {
+            System.out.println("No Sport Expertise added yet!");
+            this.viewAssignedLearners();
+            return;
+        }
         for (int i = 0; i < sportsExpertise.size(); i++) {
             System.out.print(sportsExpertise.get(i));
             if (i < sportsExpertise.size() - 1) {
@@ -36,19 +41,20 @@ public class Mentor {
 
         this.viewAssignedLearners();
     }
-//        System.out.println("\nAssigned Learners: ");
-//        for (Student learner : assignedLearners) {
-//            System.out.print(learner);
-//            if (learner != assignedLearners[assignedLearners.length - 1]) {
-//                System.out.print(", ");
-//            }
-//        }
 
-//    void assignLearners(Student[] students) {    // Assign Student to a mentor if capacity available
-//        for (Student s : students) {
-//            assignLearners(s);
-//        }
-//    }
+    void viewAssignedLearners() {   // todo: it is accessible to Student, how to prevent so that Main can access
+        System.out.println("Assigned Learners of \"" + this + "\":");
+
+        if(assignedLearners[0] == null) {  // todo: may be error
+            System.out.println("\tNo Learners Assigned!");
+            return;
+        }
+
+        for (Student s : assignedLearners) {
+            if(s == null) continue;
+            System.out.println("\t" + s);
+        }
+    }
 
     void assignLearners(Student s) {    // Assign Student to a mentor if capacity available
         for (int i = 0; i < assignedLearners.length /*todo: OR this.maxLearners*/; i++) {
@@ -73,20 +79,8 @@ public class Mentor {
             }
         }
         if(!removed) {
-            System.out.println("Unable to remove student \"" + s + "\" as it does not exist!");
+            System.out.println("Unable to remove student \"" + s + "\" as it does not exist in learners list of mentor \"" + this + "\"!");
         }
     }
 
-    void viewAssignedLearners() {   // todo: it is accessible to Student, how to prevent so that Main can access
-        System.out.println("Assigned Learners of \"" + this + "\":");
-
-        if(assignedLearners == null) {  // todo: may be error
-            System.out.println("\tNo Learners Assigned!");
-            return;
-        }
-
-        for (Student s : assignedLearners) {
-            System.out.println("\t" + s);
-        }
-    }
 }

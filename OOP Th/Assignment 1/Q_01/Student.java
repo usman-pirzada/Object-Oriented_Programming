@@ -20,24 +20,44 @@ public class Student {
 
     @Override
     public String toString() {
-        return name + " (" + id + ")";
+        return name + " (ID: " + id + ")";
     }
 
     // ***** Methods *****
     void viewStudentDetails() {
         System.out.println("\nID: " + id + "\nName: " + name + "\nAge: " + age);
         System.out.print("\nSports Interests: ");
+        if(this.sportsInterests.isEmpty()) {
+            System.out.println("No Sport Interests added yet!");
+            return;
+        }
         for (int i = 0; i < sportsInterests.size(); i++) {
-            System.out.print(sportsInterests.get(i).getName());
+            System.out.print(sportsInterests.get(i));
             if (i < sportsInterests.size() - 1) {
                 System.out.print(", ");
             }
         }
     }
 
-//    void registerForMentorship(Mentor m) {  // todo: Register for Mentorship
-//
-//    }
+    void registerForMentorship(Mentor m) {  // Register for Mentorship  // todo: is it ok to add it twice, once in local & then in the class wale Mentor
+        this.mentorAssigned = m;
+        m.assignLearners(this);
+
+        System.out.println("Student \"" + this + "\" registered for the mentor \"" + m + "\" successfully!");
+    }
+
+    void unregisterFromMentor(Mentor m) {  // Unregister from the Mentor  // todo: is it ok to add it twice, once in local & then in the class wale Mentor
+        if(this.mentorAssigned == null) {
+            System.out.println("Can't unregister the student \"" + this + "\" as it already has not registered to any mentor!");
+        }
+
+        if(this.mentorAssigned.equals(m)) {
+            this.mentorAssigned = null;
+            m.removeLearner(this);
+
+            System.out.println("Student \"" + this + "\" unregistered from the mentor \"" + m + "\" successfully!");
+        }
+    }
 
     void addSportsInterest(Sport s) {    // Add a Sport Interest
         this.sportsInterests.add(s);
@@ -55,6 +75,10 @@ public class Student {
     }
 
     void viewMentorDetails() {  // View Mentor Details
+        if(this.mentorAssigned == null) {
+            System.out.println("No Mentor Assigned Yet!");
+            return;
+        }
         this.mentorAssigned.viewMentorDetails();
     }
 

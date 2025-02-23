@@ -74,7 +74,6 @@ public class Main {
         // Create Mentors
         ArrayList<Sport> mentor1Expertise = new ArrayList<>();  // Adding Sports Expertise of Mentor1
         mentor1Expertise.add(basketball);
-        mentor1Expertise.add(swimRacing);
         Mentor mentor1 = new Mentor(1, "Coach Umair", 5, mentor1Expertise/*, new Student[]{student1, student2, student1, student2}*/);
 
         // ***** Student Class Activities *****
@@ -82,17 +81,17 @@ public class Main {
         // ***** Mentor Class Activities *****
         // todo: it should display error for non-matching sports of mentor & student
         // todo: it should display that 3rd student cant be assigned
-        mentor1.assignLearners(student2);
+        mentor1.assignLearners(student1);
         mentor1.viewAssignedLearners();
-        mentor1.removeLearner(student2);
+        mentor1.removeLearner(student1);
         mentor1.viewAssignedLearners();
         // todo: Provide Guidance
 
         // ***** Sport Class Functionalities *****
         // Add/Remove Skills from a Sport
-        tennis.addSkill(passing);
-        tennis.showSportDetails();
-        tennis.removeSkill(serving);
+        basketball.addSkill(passing);
+        basketball.showSportDetails();
+        basketball.removeSkill(serving);
 
         // ***** Skill Class Functionalities *****
         // Update description of a skill
