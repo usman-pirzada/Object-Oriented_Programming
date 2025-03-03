@@ -14,7 +14,7 @@ public class Main {
         tennisSkills.add(forehand);
         Sport tennis = new Sport(1, "Tennis", "A racquet sport played individually or in pairs", tennisSkills);
 
-        // Create mentor Ali with tennis expertise
+        // Create mentor Ali with tennis expertise.
         ArrayList<Sport> aliExpertise = new ArrayList<>();
         aliExpertise.add(tennis);
         Mentor ali = new Mentor(1, "Ali", 3, aliExpertise);
