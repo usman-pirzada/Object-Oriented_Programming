@@ -21,7 +21,7 @@ public class MathFunctions {
         double num1 = 7.2;
         double num2 = 7.8;
 
-        System.out.println("Math.ceil(" + num1 + ") = " + Math.ceil("-4.2" + -4.2)); // Output: 8.0
+        System.out.println("Math.ceil(" + num1 + ") = " + Math.ceil(num1)); // Output: 8.0
         System.out.println("Math.ceil(" + num2 + ") = " + Math.ceil(num2)); // Output: 8.0
 
         System.out.println("Math.floor(" + num1 + ") = " + Math.floor(num1)); // Output: 7.0
