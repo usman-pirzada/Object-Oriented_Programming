@@ -13,6 +13,8 @@ public class FewFormattings {
 
         System.out.printf("'%s'%n", "JaVa");    // %s will not capitalize or vise versa
         System.out.printf("'%S'%n", "jAvA");    // %S will capitalize all characters
+
+        // Similar is for %c and %C
         
         System.out.printf("simple integer: %d%n", 10000L);  // %d accepts all the integers available i.e: byte, short, int, long and Big Integer
         
