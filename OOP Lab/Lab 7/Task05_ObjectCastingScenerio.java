@@ -4,12 +4,26 @@ class Product {
     }
 }
 
-class Electronics {
+class Electronics extends Product {
 
+    void showDetails() {
+
+    }
+
+    void applyWarranty() {
+
+    }
 }
 
-class Clothing {
+class Clothing extends Product {
 
+    void showDetails() {
+        
+    }
+
+    void applyDiscount() {
+
+    }
 }
 
 public class Task05_ObjectCastingScenerio {
