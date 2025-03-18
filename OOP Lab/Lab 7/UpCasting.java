@@ -17,7 +17,7 @@ class PartTimeEmployee extends Employee {
     }
 }
 
-public class Upcasting {
+public class UpCasting {
     public static void main(String[] args) {
         Employee e1 = new FullTimeEmployee();
         Employee e2 = new PartTimeEmployee();
