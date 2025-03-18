@@ -9,6 +9,12 @@ public class Student {
     }
 
     void tapCard() {
-
+        
     }
+
+    void payFee() {
+        // active card
+    }
+
+    
 }

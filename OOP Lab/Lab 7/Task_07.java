@@ -31,6 +31,11 @@ class Doctor extends Person {
         System.out.println("Department: " + department);
         System.out.println();
     }
+
+    @Override
+    public String toString() {
+        return name + " (" + specialization + ")";
+    }
 }
 
 class Patient extends Person {
@@ -49,7 +54,7 @@ class Patient extends Person {
         System.out.println("Patient Age: " + age);
         System.out.println("Patient ID: " + patientID);
         System.out.println("Patient Disease: " + disease);
-        System.out.println("Doctor Assigned: " + doctor.name);
+        System.out.println("Doctor Assigned: " + doctor);
         System.out.println();
     }
 }
@@ -57,7 +62,6 @@ class Patient extends Person {
 class Department {
     String name;
     String location;
-
 
     Department(String name, String location) {
         this.name = name;
