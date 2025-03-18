@@ -6,6 +6,7 @@ class Vehicle {
 class Car extends Vehicle {
     int noOfSeats;
 
+    @Override
     void showDetails() {
     }
 }
@@ -13,6 +14,7 @@ class Car extends Vehicle {
 class Bike extends Vehicle {
     int engineCapacity;
 
+    @Override
     void showDetails() {
     }
 }
