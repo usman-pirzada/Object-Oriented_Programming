@@ -45,7 +45,7 @@ class Bike extends Vehicle {
     }
 }
 
-public class Task_06 {
+public class Task06_InheritanceAndSUPERkeyword {
     public static void main(String[] args) {
         
         Car c = new Car("Toyota", 2020, 5);
