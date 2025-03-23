@@ -26,6 +26,7 @@ class LicensedSoftware extends Software {
         this.expiryDate = expiryDate;
     }
 
+    // todo:
     boolean isLicenseExpired(String currentDate) {
         // Date comparing logic
         String expiryNum = expiryDate.replace("-", "");
@@ -66,25 +67,25 @@ class CloudSoftware extends LicensedSoftware {
 
 public class Q_07_DateComparison_Inheritance_and_FinalClass {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter Software Name: ");
-        String softwareName = scanner.nextLine();
+        String softwareName = sc.nextLine();
 
         System.out.print("Enter Version: ");
-        String version = scanner.nextLine();
+        String version = sc.nextLine();
 
         System.out.print("Enter License Key: ");
-        String licenseKey = scanner.nextLine();
+        String licenseKey = sc.nextLine();
 
         System.out.print("Enter License Expiry Date (yyyy-MM-dd): ");
-        String expiryDate = scanner.nextLine();
+        String expiryDate = sc.nextLine();
 
         System.out.print("Enter Current Date (yyyy-MM-dd): ");
-        String currentDate = scanner.nextLine();
+        String currentDate = sc.nextLine();
 
         System.out.print("Enter Size of Software (GB): ");
-        int usedStorage = scanner.nextInt();
+        int usedStorage = sc.nextInt();
 
         CloudSoftware cloudSoftware = new CloudSoftware(softwareName, version, licenseKey, expiryDate, usedStorage);
         System.out.println("\nSoftware Details:");
