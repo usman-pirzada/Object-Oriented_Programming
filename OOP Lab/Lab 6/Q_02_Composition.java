@@ -27,13 +27,14 @@ class MedicalRecord {
 class Patient {
     String name;
     int ID;
-    static int totPatients;
     MedicalRecord mRecord;
+
+    private static int totPatients;
 
     Patient(String name, MedicalRecord mRecord) {
         this.name = name;
         this.mRecord = mRecord;
-        this.ID = totPatients++;
+        this.ID = ++totPatients;
     }
 
     @Override
@@ -44,7 +45,7 @@ class Patient {
     }
 }
 
-public class Q_02 {
+public class Q_02_Composition {
     public static void main(String[] args) {
         
         MedicalRecord medicalRecord = new MedicalRecord();

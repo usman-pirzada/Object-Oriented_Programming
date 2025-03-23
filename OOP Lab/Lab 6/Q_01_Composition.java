@@ -33,7 +33,7 @@ class Car {
     }
 }
 
-public class Q_01 {
+public class Q_01_Composition {
     public static void main(String[] args) {
         
         Engine engine = new Engine(150, "Petrol", 5);
