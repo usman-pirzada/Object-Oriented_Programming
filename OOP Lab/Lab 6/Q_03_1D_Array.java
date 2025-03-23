@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Q_03_1D_Array {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the number of students: ");
-        int n = scanner.nextInt();
+        int n = sc.nextInt();
 
         double[] marksArr = new double[n];
         double sum = 0;
@@ -16,7 +16,7 @@ public class Q_03_1D_Array {
         for (int i = 0; i < n; i++) {
             while(true) {
                 System.out.print("Enter marks for student #" + (i + 1) + " (0-100 marks): ");
-                double marks = scanner.nextDouble();
+                double marks = sc.nextDouble();
                 if (marks >= 0 && marks <= 100) {
                     marksArr[i] = marks;
                     sum += marks;
