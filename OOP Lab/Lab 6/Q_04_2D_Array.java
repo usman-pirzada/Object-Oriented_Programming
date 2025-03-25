@@ -41,7 +41,9 @@ public class Q_04_2D_Array {
         }
         double averageAttendance = (double) totalAttendance / (m * w);
 
-        /* todo:
+        /*
+         * todo:
+         */
         // Identify students with best and worst attendance
         int bestStudentIndex = 0, worstStudentIndex = 0;
         for (int i = 1; i < m; i++) {
@@ -68,6 +70,6 @@ public class Q_04_2D_Array {
 
         System.out.println("\nBest attendance: Student " + (bestStudentIndex + 1) + " with " + studentTotals[bestStudentIndex]);
         System.out.println("Worst attendance: Student " + (worstStudentIndex + 1) + " with " + studentTotals[worstStudentIndex]);
-        */
+        
     }
 }

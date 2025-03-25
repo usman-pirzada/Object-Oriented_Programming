@@ -1,5 +1,5 @@
 package Q_03;
 
-public class RamzanDrone extends Vehicle {
+class RamzanDrone extends Vehicle {
 
 }
