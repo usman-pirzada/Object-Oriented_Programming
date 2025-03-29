@@ -9,11 +9,11 @@ public class Vehicle {
 
     }
 
-    void cal_delivery_time() {
-
+    double cal_delivery_time(double distance, int speed) {
+        return distance/speed;
     }
 
     void movement() {
-        
+
     }
 }
