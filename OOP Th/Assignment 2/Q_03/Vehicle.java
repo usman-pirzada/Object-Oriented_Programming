@@ -5,7 +5,15 @@ public class Vehicle {
     private static int activeDeliveries;
 
 
+    void cal_optimal_route() {
 
+    }
 
+    void cal_delivery_time() {
 
+    }
+
+    void movement() {
+        
+    }
 }
