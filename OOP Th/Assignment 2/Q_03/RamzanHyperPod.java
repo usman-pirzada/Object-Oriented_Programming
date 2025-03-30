@@ -14,13 +14,16 @@ class RamzanHyperPod extends Vehicle { // High-speed underground transport optim
         return maxSpeed;
     }
     
-    void movement() {
+    @Override
+    void movement(int packageID) {
         // navigate in underground tunnel
 
-        super.movement();
-        System.out.println("\tPackage Details:");
-        System.out.println("Package ID: " + this.getId());
-        System.out.print("Delivered through: \"Ramzan Hyper Pod\"");
+        super.movement(packageID);
+        System.out.println("\tDetails:");
+        System.out.println("\t~~~~~~~");
+        System.out.println("Package ID: " + packageID);
+        System.out.print("Delivered through: \"Ramzan Hyper Pod\" [ID: " + this.getId() + "]");
         System.out.println(" (It is a ground-based high-speed transport system optimized for bulk deliveries.)");
+        System.out.println("-----------------------------------------");
     }
 }

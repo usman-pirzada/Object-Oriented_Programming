@@ -28,27 +28,30 @@ class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when deli
         try {
             inputDate = LocalDate.of(year, month, day);
         } catch (Exception e) {
-            System.out.println("Error: Invalid date entered. Please try again.");
-            verifyHistoricalConsistency(); // Recursively call the method on error
-            // return; // Exit the current method to avoid further execution
+            System.out.println("Error: Invalid date entered.");
+            // this.verifyHistoricalConsistency(); // Recursively call the method on error
+            return; // Exit the current method to avoid further execution
         }
 
         LocalDate currentDate = LocalDate.now();
 
         if (inputDate != null && inputDate.isBefore(currentDate)) {
             System.out.println("Error: The provided date (" + inputDate + ") is in the past. Please enter a valid date.");
+            this.verifyHistoricalConsistency();
         } else if (inputDate != null) {
             System.out.println("Success: Date validation completed!");
         }
     }
 
     @Override
-    void movement() {
-        super.movement();
-        System.out.println("\tPackage Details:");
-        System.out.println("Package ID: " + this.getId());
-        System.out.print("Delivering Medium: \"Ramzan Time Ship\"");
+    void movement(int packageID) {
+        super.movement(packageID);
+        System.out.println("\tDetails:");
+        System.out.println("\t~~~~~~~");
+        System.out.println("Package ID: " + packageID);
+        System.out.print("Delivering Medium: \"Ramzan Time Ship\" [ID: " + this.getId() + "]");
         System.out.println(" (This vehicle is specialized in delivering your package at your provided time accurately.)");
+        System.out.println("-----------------------------------------");
 
         // System.out.println("Delivery Time: " + cal_delivery_time(distance, speed));
         // System.out.println("Delivery Type: " + urgencyLevel);

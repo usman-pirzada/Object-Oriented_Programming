@@ -29,7 +29,8 @@ public class Vehicle {
         return distance/speed;
     }
 
-    void movement() {
-        System.out.println("\nPackage Delivered successfully!!");
+    void movement(int packageID) {
+        System.out.println("\n-----------------------------------------");
+        System.out.println("Package Delivery Scheduled successfully!!\n");
     }
 }

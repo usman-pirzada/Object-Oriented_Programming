@@ -20,13 +20,15 @@ class RamzanDrone extends Vehicle { // Small, fast, and airborne, designed for i
     // }
 
     @Override
-    void movement(/*ouble distance*/) {
+    void movement(int packageID/*double distance*/) {
         // cal_fast_aerial_route(distance);
 
-        super.movement();
-        System.out.println("\tPackage Details:");
-        System.out.println("Package ID: " + this.getId());
-        System.out.print("Delivered through: \"Ramzan Drone\"");
+        super.movement(packageID);
+        System.out.println("\tDetails:");
+        System.out.println("\t~~~~~~~");
+        System.out.println("Package ID: " + packageID);
+        System.out.print("Delivered through: \"Ramzan Drone\" [ID: " + this.getId() + "]");
         System.out.println(" (It is an aerial delivery system that specializes in delivering small iftar meals at high speed.)");
+        System.out.println("-----------------------------------------");
     }
 }

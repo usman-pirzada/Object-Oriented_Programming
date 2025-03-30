@@ -9,8 +9,9 @@ public class RamzanBox_AI_System {
         // ControlPanel cp = new ControlPanel();
 
         // cp.command(ts, "Deliver", 265); // static function in a non-static class can also be accessed by the object of the class instead of class name
-        
+
         ControlPanel.command(ts, "Deliver", 987);
+        ControlPanel.command(ts, "Deliver", 654, true);
         ControlPanel.command(drone, "Deliver", 123, true);
         ControlPanel.command(hyperPod, "Deliver", 456);
     }

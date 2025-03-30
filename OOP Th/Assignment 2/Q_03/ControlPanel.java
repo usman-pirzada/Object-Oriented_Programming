@@ -20,7 +20,7 @@ class ControlPanel {
             }
 
             vehicle.cal_delivery_time(distance, ramzanDrone.getMaxSpeed());
-            ramzanDrone.movement();
+            ramzanDrone.movement(packageID);
 
         } else if(vehicle instanceof RamzanTimeShip ramzanTimeShip) {   // A RamzanTimeShip treats “urgent” packages as historically sensitive, requiring validationbefore transport.
             if(urgencyLevel) {
@@ -28,14 +28,14 @@ class ControlPanel {
             }
 
             vehicle.cal_delivery_time(distance, ramzanTimeShip.getMaxSpeed());
-            ramzanTimeShip.movement();
+            ramzanTimeShip.movement(packageID);
 
         } else if(vehicle instanceof RamzanHyperPod) {
             if(urgencyLevel) {    
             }
 
             vehicle.cal_delivery_time(distance, ((RamzanHyperPod) vehicle).getMaxSpeed());
-            ((RamzanHyperPod) vehicle).movement();
+            ((RamzanHyperPod) vehicle).movement(packageID);
         }
         
         // vehicle.movement();
