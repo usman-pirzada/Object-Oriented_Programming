@@ -1,36 +1,56 @@
 package Q_03;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.util.Scanner;
 
 class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when delivering food to different timePeriods
+    private int maxSpeed;
 
-    void verify_hist_consistency(int date, int month, int year, int hr, int min) {
+    RamzanTimeShip(int id, int maxSpeed) {
+        super(id);
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    void verifyHistoricalConsistency() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter date below at which the package should be delivered.");
+        System.out.print("Enter date (DD MM YYYY): ");
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int year = sc.nextInt();
+
+        LocalDate inputDate = null;
+        try {
+            inputDate = LocalDate.of(year, month, day);
+        } catch (Exception e) {
+            System.out.println("Error: Invalid date entered. Please try again.");
+            verifyHistoricalConsistency(); // Recursively call the method on error
+            // return; // Exit the current method to avoid further execution
+        }
+
         LocalDate currentDate = LocalDate.now();
-        LocalTime currentTime = LocalTime.now();
 
-        int currentDay = currentDate.getDayOfMonth();
-        int currentMonth = currentDate.getMonthValue();
-        int currentYear = currentDate.getYear();
-        int currentHour = currentTime.getHour();
-        int currentMinute = currentTime.getMinute();
-
-        if (year < currentYear) {
-            System.out.println("Error: The provided year (" + year + ") is in the past. Please enter a valid year.");
-        } else if (year == currentYear && month < currentMonth) {
-            System.out.println("Error: The provided month (" + month + ") is in the past. Please enter a valid month.");
-        } else if (year == currentYear && month == currentMonth && date < currentDay) {
-            System.out.println("Error: The provided date (" + date + ") is in the past. Please enter a valid date.");
-        } else if (date < 1) {
-            System.out.println("Error: The provided date (" + date + ") is invalid. Date cannot be less than 1.");
-        } else {
-            System.out.println("Success: The provided date and time are valid.");
+        if (inputDate != null && inputDate.isBefore(currentDate)) {
+            System.out.println("Error: The provided date (" + inputDate + ") is in the past. Please enter a valid date.");
+        } else if (inputDate != null) {
+            System.out.println("Success: Date validation completed!");
         }
     }
 
     @Override
     void movement() {
-        verify_hist_consistency(29, 12, 2025, 2, 32);
+        super.movement();
+        System.out.println("\tPackage Details:");
+        System.out.println("Package ID: " + this.getId());
+        System.out.print("Delivering Medium: \"Ramzan Time Ship\"");
+        System.out.println(" (This vehicle is specialized in delivering your package at your provided time accurately.)");
 
+        // System.out.println("Delivery Time: " + cal_delivery_time(distance, speed));
+        // System.out.println("Delivery Type: " + urgencyLevel);
     }
 }
