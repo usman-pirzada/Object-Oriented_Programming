@@ -18,6 +18,8 @@ for(char ch : pass) {
 ch = 5381*33 + ch;
 }
 
+return pass;
+
 }
 
     void authenticate() {
@@ -25,6 +27,9 @@ ch = 5381*33 + ch;
     }
 
     void authenticateAndPerformAction(User user,String action) {    // A function that performs the functionality based on the User roles and their permissions
+
+if(user instance of Professors prof) {
+}
 
     }
 
