@@ -1,6 +1,6 @@
 class Professor extends User {
 
-    void assignProjexts() {
+    void assignProjects() {
 
     }
 
