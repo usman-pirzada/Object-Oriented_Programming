@@ -5,9 +5,9 @@ class User {
     String password;
     // List<> permissions;
 
-    // User() {
+    User(String name, int id, String email, String pass) {
 
-    // }
+    }
 
     void authenticate() {
 
