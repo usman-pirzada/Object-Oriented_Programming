@@ -1,8 +1,9 @@
 package Q_03;
 
 class RamzanDrone extends Vehicle { // Small, fast, and airborne, designed for iftar meal deliveries
-    private int maxSpeed;   // in Km/hr (Flying speed)
-    private double maxWeight;  // Max. weight in kg that it can handle
+    private int maxSpeed = 20;   // in Km/hr (Flying speed)
+    private double maxWeight = 5;  // Max. weight in kg that it can handle
+    private double distanceToCover;
 
     RamzanDrone(int id, int maxSpeed, double maxWeight) {
         super(id);
@@ -14,16 +15,26 @@ class RamzanDrone extends Vehicle { // Small, fast, and airborne, designed for i
         return maxSpeed;
     }
 
+    public double getDistanceToCover() {
+        return distanceToCover;
+    }
+
+    public void setDistanceToCover(double distanceToCover) {
+        this.distanceToCover = distanceToCover;
+    }
+
     // void cal_fast_aerial_route(double distance) {
     //     double deliveryTime = cal_delivery_time(distance, this.maxSpeed);
     //     System.out.printf("Your parcel will be delivered within %d hours via Air Route. \n", deliveryTime);
     // }
 
     @Override
-    void movement(int packageID/*double distance*/) {
+    void movement(int packageID/*, Vehicle vehicle*/) {
         // cal_fast_aerial_route(distance);
 
-        super.movement(packageID);
+        double deliveryTime = this.cal_delivery_time(distanceToCover, this.getMaxSpeed());
+
+        // super.movement(packageID);
         System.out.println("\tDetails:");
         System.out.println("\t~~~~~~~");
         System.out.println("Package ID: " + packageID);

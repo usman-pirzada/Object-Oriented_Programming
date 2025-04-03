@@ -26,11 +26,13 @@ public class Vehicle {
     // }
 
     double cal_delivery_time(double distance, int speed) {
-        return distance/speed;
-    }
+        return 0; // Placeholder return value
+        }
 
-    void movement(int packageID) {
-        System.out.println("\n-----------------------------------------");
-        System.out.println("Package Delivery Scheduled successfully!!\n");
-    }
+    void movement(int packageID) {}
+
+    // void movement(int packageID/*, Vehicle vehicle*/) {
+    //     System.out.println("\n-----------------------------------------");
+    //     System.out.println("Delivery of package [ID: " + packageID + "] scheduled successfully!!\n");
+    // }
 }

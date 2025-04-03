@@ -4,7 +4,9 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when delivering food to different timePeriods
-    private int maxSpeed;
+    private int maxSpeed = 100;
+    // private double maxWeight;
+    private double distanceToCover;
 
     RamzanTimeShip(int id, int maxSpeed) {
         super(id);
@@ -13,6 +15,14 @@ class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when deli
 
     public int getMaxSpeed() {
         return maxSpeed;
+    }
+
+    public double getDistanceToCover() {
+        return distanceToCover;
+    }
+
+    public void setDistanceToCover(double distanceToCover) {
+        this.distanceToCover = distanceToCover;
     }
 
     void verifyHistoricalConsistency() {
@@ -45,12 +55,17 @@ class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when deli
 
     @Override
     void movement(int packageID) {
-        super.movement(packageID);
+
+        double deliveryTime = this.cal_delivery_time(distanceToCover, this.getMaxSpeed());
+
+        // super.movement(packageID);
+
         System.out.println("\tDetails:");
         System.out.println("\t~~~~~~~");
         System.out.println("Package ID: " + packageID);
         System.out.print("Delivering Medium: \"Ramzan Time Ship\" [ID: " + this.getId() + "]");
         System.out.println(" (This vehicle is specialized in delivering your package at your provided time accurately.)");
+        // System.out.println("Estimated Delivery Time: " + this.cal_delivery_time(distance, this.maxSpeed));
         System.out.println("-----------------------------------------");
 
         // System.out.println("Delivery Time: " + cal_delivery_time(distance, speed));

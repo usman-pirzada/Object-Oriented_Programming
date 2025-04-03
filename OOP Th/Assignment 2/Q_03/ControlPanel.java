@@ -4,41 +4,52 @@ import java.util.Scanner;
 
 class ControlPanel {
 
-    static void command(Vehicle vehicle, String work, int packageID) {
-        command(vehicle, work, packageID, false);
+    static void command(Vehicle[] vehicles, String work, int packageID) {
+        command(vehicles, work, packageID, false);
     }
 
-    static void command(Vehicle vehicle, String work, int packageID, boolean urgencyLevel) {
+    static void command(Vehicle[] vehicles, String work, int packageID, boolean urgencyLevel) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter distance of destination: ");
-        double distance = sc.nextDouble();
+        Vehicle vehicle = DecisionMaking.decisionMakingSystem(vehicles, urgencyLevel); // todo: see whether distance needed in it
+
+        System.out.print("Enter destination distance (in km): ");
 
         if(vehicle instanceof RamzanDrone ramzanDrone) {
+            ramzanDrone.setDistanceToCover(sc.nextDouble());
+
             if(urgencyLevel) {
                 // A RamzanDrone interprets “urgent” as activating high-speed mode to ensure an iftar meal arrives on time.
+                System.out.println("Your Iftar meal has been \"urgently\" delivered via Ramzan Drone by activating \"high-speed mode\".");
+            } else {
+                System.out.println("Your package will be delivered via Ramzan Drone.");
             }
 
-            vehicle.cal_delivery_time(distance, ramzanDrone.getMaxSpeed());
             ramzanDrone.movement(packageID);
 
         } else if(vehicle instanceof RamzanTimeShip ramzanTimeShip) {   // A RamzanTimeShip treats “urgent” packages as historically sensitive, requiring validationbefore transport.
+            ramzanTimeShip.setDistanceToCover(sc.nextDouble());
+
             if(urgencyLevel) {
+                System.out.println("As your package is marked as urgent, we need to validate historical consistency.");
                 ramzanTimeShip.verifyHistoricalConsistency();
+            } else {
+                System.out.println("Your package will be delivered via Ramzan Time Ship.");
             }
 
-            vehicle.cal_delivery_time(distance, ramzanTimeShip.getMaxSpeed());
             ramzanTimeShip.movement(packageID);
 
         } else if(vehicle instanceof RamzanHyperPod) {
-            if(urgencyLevel) {    
+            ((RamzanHyperPod) vehicle).setDistanceToCover(sc.nextDouble());
+
+            if(urgencyLevel) {
+                System.out.println("Your package will be \"urgently\" delivered via Ramzan Hyper Pod.");
+            } else {
+                System.out.println("Your package will be delivered via Ramzan Hyper Pod.");
             }
 
-            vehicle.cal_delivery_time(distance, ((RamzanHyperPod) vehicle).getMaxSpeed());
             ((RamzanHyperPod) vehicle).movement(packageID);
         }
-        
-        // vehicle.movement();
 
     }
 }
