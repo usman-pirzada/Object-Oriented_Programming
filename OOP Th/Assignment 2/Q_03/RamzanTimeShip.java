@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when delivering food to different timePeriods
     private int maxSpeed = 100;
-    // private double maxWeight;
+    private double maxWeight = 70;
     private double distanceToCover;
 
     RamzanTimeShip(int id, int maxSpeed) {
@@ -15,6 +15,10 @@ class RamzanTimeShip extends Vehicle {  // Ensures historical accuracy when deli
 
     public int getMaxSpeed() {
         return maxSpeed;
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
     }
 
     public double getDistanceToCover() {

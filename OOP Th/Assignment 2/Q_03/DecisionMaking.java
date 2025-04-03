@@ -76,14 +76,48 @@ public class DecisionMaking {
         Vehicle candidateVehicle = null;    // A temporary variable to track a potential conflict (when delivery times are equal)
 
         for(Vehicle v : vehicles) {
-            // Check if the vehicle can handle the package weight
-            if(v.getMaxWeight() >= packageWeight) {
-                double deliveryTime = v.cal_delivery_time(v.getDistanceToCover(), v.getMaxSpeed());
 
+            // Below vehicle detecting and casting logic was not needed if used "abstract" declaration of getters in abstract Vehicle class
+
+            double v_maxWeight;
+            double v_distanceToCover;
+            double v_maxSpeed;
+            double deliveryTime;
+
+            // Detect vehicle type and cast to it
+            switch(v) {
+                case RamzanDrone rd -> {
+                    v_maxWeight = rd.getMaxWeight();
+                    v_distanceToCover = rd.getDistanceToCover();
+                    v_maxSpeed = rd.getMaxSpeed();
+                    deliveryTime = rd.cal_delivery_time(rd.getDistanceToCover(), rd.getMaxSpeed());
+                }
+                case RamzanHyperPod rhp -> {
+                    v_maxWeight = rhp.getMaxWeight();
+                    v_distanceToCover = rhp.getDistanceToCover();
+                    v_maxSpeed = rhp.getMaxSpeed();
+                    deliveryTime = rhp.cal_delivery_time(rhp.getDistanceToCover(), rhp.getMaxSpeed());
+                }
+                case RamzanTimeShip rts -> {
+                    v_maxWeight = rts.getMaxWeight();
+                    v_distanceToCover = rts.getDistanceToCover();
+                    v_maxSpeed = rts.getMaxSpeed();
+                    deliveryTime = rts.cal_delivery_time(rts.getDistanceToCover(), rts.getMaxSpeed());
+                }
+                default -> {
+                    System.out.println("Skipped the Invalid Vehicle Type!!");
+                    continue; // Skip unknown vehicle types
+                }
+            }
+
+            // Check if the detected vehicle can handle the package weight
+            if(v_maxWeight >= packageWeight) {
+                
                 if(deliveryTime < minDeliveryTime) {
                     minDeliveryTime = deliveryTime;
                     bestVehicle = v;
                     candidateVehicle = null;    // reset candidate for conflict resolution
+
                 } else if (deliveryTime == minDeliveryTime) {
                     // Conflict resolution if two vehicles have the same delivery time
                     bestVehicle = AI_conflictResolution.resolveConflict(bestVehicle, v, packageWeight);
@@ -93,6 +127,40 @@ public class DecisionMaking {
         }
 
         return bestVehicle;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // if(packageWeight <= 50) {
         //     return vehicles[1];
@@ -132,18 +200,3 @@ public class DecisionMaking {
         //     }
         //     return bestVehicle;
         // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-}

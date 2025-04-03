@@ -15,6 +15,10 @@ class RamzanDrone extends Vehicle { // Small, fast, and airborne, designed for i
         return maxSpeed;
     }
 
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
     public double getDistanceToCover() {
         return distanceToCover;
     }

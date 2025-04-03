@@ -15,6 +15,10 @@ class RamzanHyperPod extends Vehicle { // High-speed underground transport optim
         return maxSpeed;
     }
 
+    public double getMaxWeight() {
+        return maxWeight;
+    }
+
     public double getDistanceToCover() {
         return distanceToCover;
     }
@@ -37,5 +41,9 @@ class RamzanHyperPod extends Vehicle { // High-speed underground transport optim
         System.out.print("Delivered through: \"Ramzan Hyper Pod\" [ID: " + this.getId() + "]");
         System.out.println(" (It is a ground-based high-speed transport system optimized for bulk deliveries.)");
         System.out.println("-----------------------------------------");
+    }
+
+    public double getMaxWeight() {
+        return maxWeight;
     }
 }
