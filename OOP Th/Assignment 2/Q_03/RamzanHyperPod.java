@@ -43,7 +43,4 @@ class RamzanHyperPod extends Vehicle { // High-speed underground transport optim
         System.out.println("-----------------------------------------");
     }
 
-    public double getMaxWeight() {
-        return maxWeight;
-    }
 }

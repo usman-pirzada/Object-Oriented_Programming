@@ -80,29 +80,29 @@ public class DecisionMaking {
             // Below vehicle detecting and casting logic was not needed if used "abstract" declaration of getters in abstract Vehicle class
 
             double v_maxWeight;
-            double v_distanceToCover;
-            double v_maxSpeed;
             double deliveryTime;
+            // double v_distanceToCover;
+            // double v_maxSpeed;
 
             // Detect vehicle type and cast to it
             switch(v) {
                 case RamzanDrone rd -> {
                     v_maxWeight = rd.getMaxWeight();
-                    v_distanceToCover = rd.getDistanceToCover();
-                    v_maxSpeed = rd.getMaxSpeed();
                     deliveryTime = rd.cal_delivery_time(rd.getDistanceToCover(), rd.getMaxSpeed());
+                    // v_maxSpeed = rd.getMaxSpeed();
+                    // v_distanceToCover = rd.getDistanceToCover();
                 }
                 case RamzanHyperPod rhp -> {
                     v_maxWeight = rhp.getMaxWeight();
-                    v_distanceToCover = rhp.getDistanceToCover();
-                    v_maxSpeed = rhp.getMaxSpeed();
                     deliveryTime = rhp.cal_delivery_time(rhp.getDistanceToCover(), rhp.getMaxSpeed());
+                    // v_maxSpeed = rhp.getMaxSpeed();
+                    // v_distanceToCover = rhp.getDistanceToCover();
                 }
                 case RamzanTimeShip rts -> {
                     v_maxWeight = rts.getMaxWeight();
-                    v_distanceToCover = rts.getDistanceToCover();
-                    v_maxSpeed = rts.getMaxSpeed();
                     deliveryTime = rts.cal_delivery_time(rts.getDistanceToCover(), rts.getMaxSpeed());
+                    // v_maxSpeed = rts.getMaxSpeed();
+                    // v_distanceToCover = rts.getDistanceToCover();
                 }
                 default -> {
                     System.out.println("Skipped the Invalid Vehicle Type!!");
