@@ -6,7 +6,8 @@ class User {
     // List<> permissions;
 
     User(String name, int id, String email, String pass) {
-
+this.name = name;
+int id = id;
     }
 
     void authenticate() {
