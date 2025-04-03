@@ -12,6 +12,14 @@ this.email;
 this.password = generateHash(pass);
     }
 
+    String generateHash(String pass) {
+char[] pass = String.toCharArray(pass);
+for(char ch : pass) {
+ch = 5381*33 + ch;
+}
+
+}
+
     void authenticate() {
 
     }
