@@ -8,6 +8,8 @@ class User {
     User(String name, int id, String email, String pass) {
 this.name = name;
 int id = id;
+this.email;
+this.password = generateHash(pass);
     }
 
     void authenticate() {
