@@ -18,7 +18,7 @@ public class AI_conflictResolution {
                 System.out.println("Unable to cast the invalid Vehicle Type!!");
                 yield Double.NEGATIVE_INFINITY;
             }
-        }
+        };
 
         margin2 = switch(v2) {
             case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
@@ -28,7 +28,7 @@ public class AI_conflictResolution {
                 System.out.println("Unable to cast the invalid Vehicle Type!!");
                 yield Double.NEGATIVE_INFINITY;
             }
-        }
+        };
 
         // Vehicle with greater capacity will be preferred for safety
         if(margin1 >= margin2) {
@@ -38,35 +38,3 @@ public class AI_conflictResolution {
         }
     }
 }
-
-
-
-/*
-
-    margin1 = switch(v1) {
-                case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
-                case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
-                case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
-                default -> {
-                System.out.println("Unable to cast the invalid Vehicle Type!!");
-                yield Double.NEGATIVE_INFINITY;
-                }
-            };
-
-    margin2 = switch(v2) {
-        case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
-        case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
-        case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
-        default -> {
-        System.out.println("Unable to cast the invalid Vehicle Type!!");
-        yield Double.NEGATIVE_INFINITY;
-        }
-    };
-
-        if(margin1 == Double.NEGATIVE_INFINITY || margin2 == Double.NEGATIVE_INFINITY) {
-            return null;
-        }
-
-
-
- */
