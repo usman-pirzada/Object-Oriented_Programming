@@ -10,35 +10,23 @@ public class AI_conflictResolution {
         double margin1, margin2;
 
         // Detect vehicle type and cast to it
-        switch(v1) {    // For Vehicle v1
-            case RamzanDrone rd -> {
-                margin1 = rd.getMaxWeight() - packageWeight;
-            }
-            case RamzanHyperPod rhp -> {
-                margin1 = rhp.getMaxWeight() - packageWeight;
-            }
-            case RamzanTimeShip rts -> {
-                margin1 = rts.getMaxWeight() - packageWeight;
-            }
+        margin1 = switch(v1) {    // For Vehicle v1
+            case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
+            case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
+            case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
             default -> {
                 System.out.println("Unable to cast the invalid Vehicle Type!!");
-                return null;
+                yield Double.NEGATIVE_INFINITY;
             }
         }
 
-        switch(v2) {    // For Vehicle v2
-            case RamzanDrone rd -> {
-                margin2 = rd.getMaxWeight() - packageWeight;
-            }
-            case RamzanHyperPod rhp -> {
-                margin2 = rhp.getMaxWeight() - packageWeight;
-            }
-            case RamzanTimeShip rts -> {
-                margin2 = rts.getMaxWeight() - packageWeight;
-            }
+        margin2 = switch(v2) {
+            case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
+            case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
+            case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
             default -> {
                 System.out.println("Unable to cast the invalid Vehicle Type!!");
-                return null;
+                yield Double.NEGATIVE_INFINITY;
             }
         }
 
@@ -50,3 +38,35 @@ public class AI_conflictResolution {
         }
     }
 }
+
+
+
+/*
+
+    margin1 = switch(v1) {
+                case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
+                case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
+                case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
+                default -> {
+                System.out.println("Unable to cast the invalid Vehicle Type!!");
+                yield Double.NEGATIVE_INFINITY;
+                }
+            };
+
+    margin2 = switch(v2) {
+        case RamzanDrone rd -> rd.getMaxWeight() - packageWeight;
+        case RamzanHyperPod rhp -> rhp.getMaxWeight() - packageWeight;
+        case RamzanTimeShip rts -> rts.getMaxWeight() - packageWeight;
+        default -> {
+        System.out.println("Unable to cast the invalid Vehicle Type!!");
+        yield Double.NEGATIVE_INFINITY;
+        }
+    };
+
+        if(margin1 == Double.NEGATIVE_INFINITY || margin2 == Double.NEGATIVE_INFINITY) {
+            return null;
+        }
+
+
+
+ */
