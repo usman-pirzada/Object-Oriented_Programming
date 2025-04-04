@@ -11,6 +11,8 @@ public class DecisionMaking {
      */
     protected static Vehicle decisionMakingSystem(Vehicle[] vehicles, boolean urgencyLevel) {
 
+        System.out.println("  Making decision between vehicles......");
+
         if(urgencyLevel) {
             Scanner sc = new Scanner(System.in);
 
@@ -63,9 +65,9 @@ public class DecisionMaking {
         
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the weight of the package: ");
+        System.out.print("Enter the weight of the package between \"0-130\" (in kg): ");
         double packageWeight = sc.nextDouble();
-        if(packageWeight <= 0) {
+        if(packageWeight <= 0 || packageWeight > 130) {
             System.out.println("Incompatible package weight!! Try again.");
             return decisionMakingSystem(vehicles, urgencyLevel);
         }
@@ -73,8 +75,7 @@ public class DecisionMaking {
     
         Vehicle bestVehicle = null;
         double minDeliveryTime = Double.MAX_VALUE;
-        Vehicle candidateVehicle = null;    // A temporary variable to track a potential conflict (when delivery times are equal)
-
+        
         for(Vehicle v : vehicles) {
 
             // Below vehicle detecting and casting logic was not needed if used "abstract" declaration of getters in abstract Vehicle class
@@ -116,7 +117,6 @@ public class DecisionMaking {
                 if(deliveryTime < minDeliveryTime) {
                     minDeliveryTime = deliveryTime;
                     bestVehicle = v;
-                    candidateVehicle = null;    // reset candidate for conflict resolution
 
                 } else if (deliveryTime == minDeliveryTime) {
                     // Conflict resolution if two vehicles have the same delivery time
@@ -130,73 +130,3 @@ public class DecisionMaking {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if(packageWeight <= 50) {
-        //     return vehicles[1];
-        // } else if(packageWeight > 50 && packageWeight < 100) {
-        //     return vehicles[2];
-        // } else {
-        //     return vehicles[0];
-        // }
-
-        
-
-        // todo: speed can also be simaltaneusly checked as the vehicle with maxWeight 100kg can lift even weight < 50
-
-        //     double bestScore = -1;
-        //     Vehicle bestVehicle = null;
-        //     for(Vehicle v : vehicles) {
-        //         double speed = 0;
-        //         double weightBonus = 0; // default for vehicles without a maxWeight attribute
-    
-        //         if(v instanceof RamzanDrone) {
-        //             speed = ((RamzanDrone)v).getMaxSpeed();
-        //             // using 5.0 (kg) as bonus – can be adjusted as needed
-        //             weightBonus = 5.0;                
-        //         } else if(v instanceof RamzanHyperPod) {
-        //             speed = ((RamzanHyperPod)v).getMaxSpeed();
-        //             // using 100.0 (kg) as bonus – can be adjusted as needed
-        //             weightBonus = 100.0;                
-        //         } else if(v instanceof RamzanTimeShip) {
-        //             // For RamzanTimeShip, no maxWeight attribute so only consider speed.
-        //             speed = ((RamzanTimeShip)v).getMaxSpeed();
-        //         }
-        //         double score = speed + weightBonus;
-        //         if(score > bestScore) {
-        //             bestScore = score;
-        //             bestVehicle = v;
-        //         }
-        //     }
-        //     return bestVehicle;
-        // }

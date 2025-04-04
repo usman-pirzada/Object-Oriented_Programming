@@ -2,7 +2,7 @@ package Q_03;
 
 class RamzanDrone extends Vehicle { // Small, fast, and airborne, designed for iftar meal deliveries
     private int maxSpeed = 20;   // in Km/hr (Flying speed)
-    private double maxWeight = 5;  // Max. weight in kg that it can handle
+    private double maxWeight = 20;  // Max. weight in kg that it can handle
     private double distanceToCover;
 
     RamzanDrone(int id, int maxSpeed, double maxWeight) {

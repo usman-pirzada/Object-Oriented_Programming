@@ -7,6 +7,8 @@ public class AI_conflictResolution {
      * The vehicle with the higher margin/capacity (maxWeight - packageWeight) is preferred.
      */
     public static Vehicle resolveConflict(Vehicle v1, Vehicle v2, double packageWeight) {
+
+        System.out.println("  Resolving conflict between vehicles........");
         double margin1, margin2;
 
         // Detect vehicle type and cast to it

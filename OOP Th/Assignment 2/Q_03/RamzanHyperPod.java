@@ -2,7 +2,7 @@ package Q_03;
 
 class RamzanHyperPod extends Vehicle { // High-speed underground transport optimized for bulk food deliveries.
     private int maxSpeed = 120;   // in Km/hr (Ground speed)
-    private double maxWeight = 100;   // Max. weight in kg that it can lift
+    private double maxWeight = 130;   // Max. weight in kg that it can lift
     private double distanceToCover;
 
     RamzanHyperPod(int id, int maxSpeed, double maxWeight) {

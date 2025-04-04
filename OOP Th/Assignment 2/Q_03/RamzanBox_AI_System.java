@@ -11,16 +11,16 @@ public class RamzanBox_AI_System {
 
 
         // Array of vehicles is passed to the command method, where AI decision-making system will decide the vehicle to choose for delivery.
-        ControlPanel.command(vehicles, "Deliver", 987);
-        ControlPanel.command(vehicles, "Deliver", 654, true);
+        System.out.println("******Urgent Delivery******");
+        System.out.println("\tVehicle-01");
         ControlPanel.command(vehicles, "Deliver", 123, true);
-        ControlPanel.command(vehicles, "Deliver", 456);
 
+        System.out.println("\n******Non-urgent Deliveries******");
+        System.out.println("\tVehicle-02");
+        ControlPanel.command(vehicles, "Deliver", 654, false);
+        
+        System.out.println("\n\tVehicle-03");
+        ControlPanel.command(vehicles, "Deliver", 987);
 
-        /*
-         * It shows that static function in a non-static class can also be accessed by the object of the class instead of class name
-         */
-        // ControlPanel cp = new ControlPanel();
-        // cp.command(ts, "Deliver", 265);
     }
 }
