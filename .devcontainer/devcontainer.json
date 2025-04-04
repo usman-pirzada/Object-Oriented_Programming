@@ -13,7 +13,7 @@
 		},
 		"ghcr.io/devcontainers-extra/features/ant-sdkman:2": {
 			"version": "latest",
-			"jdkVersion": "latest",
+			"jdkVersion": "17",
 			"jdkDistro": "oracle"
 		}
 	},
