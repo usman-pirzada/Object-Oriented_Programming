@@ -16,6 +16,18 @@
 			"jdkVersion": "latest",
 			"jdkDistro": "oracle"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"redhat.java",
+				"Oracle.oracle-java",
+				"vscjava.vscode-java-pack",
+				"vscjava.vscode-java-debug",
+				"vscjava.vscode-maven",
+				"vscjava.vscode-java-dependency"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
