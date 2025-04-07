@@ -1,6 +1,6 @@
 package ConstructorChaining;
 
-public class Vehicle {
+class Vehicle {
     private String name;
     private String model;
     private int year;
