@@ -32,12 +32,11 @@ public class Main {
         a3 = (Dog) a3;
         ((Dog) a3).sayHello();
 
-        // Shadowiing
-        ((Dog) a3).sayHello();
         Dog d1 = (Dog) a3;
         d1.sayHello();
 
         /*
+         * Shadowing (variable of child hides the variable of parent class)
          * If same variable exist in parent & child, then here parent variable will be printed
          * "catFood" variable can be accessed by shadowing/downcasting
          */
