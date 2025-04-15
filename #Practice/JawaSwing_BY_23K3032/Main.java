@@ -1,7 +1,5 @@
 package JawaSwing_BY_23K3032;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Main {
@@ -74,7 +72,7 @@ public class Main {
 
         /*
          * Will not proceed without accepting T&C by checking the checkbox
-         */
+         *//*
 
         JLabel label = new JLabel("Enter your name:");
         label.setBounds(20, 20, 150, 20);
@@ -107,5 +105,12 @@ public class Main {
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        */
+
+        /*
+         * Making GUI Calculator
+         */
+
+        JLabel label = new JLabel();
     }
 }
