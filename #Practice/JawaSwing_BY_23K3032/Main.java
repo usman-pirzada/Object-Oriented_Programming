@@ -1,8 +1,7 @@
 package JawaSwing_BY_23K3032;
 
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Main {
@@ -122,10 +121,10 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         JLabel lengthLabel, widthLabel, areaLabel, perimeterLabel;
-        lengthLabel = new JLabel("Enter the length:", SwingConstants.RIGHT);
-        widthLabel = new JLabel("Enter the width:", SwingConstants.RIGHT);
-        areaLabel = new JLabel("The area is:", SwingConstants.RIGHT);
-        perimeterLabel = new JLabel("Perimeter", SwingConstants.RIGHT);
+        lengthLabel = new JLabel("Enter the length:", SwingConstants.CENTER);
+        widthLabel = new JLabel("Enter the width:", SwingConstants.CENTER);
+        areaLabel = new JLabel("The area is:", SwingConstants.CENTER);
+        perimeterLabel = new JLabel("Perimeter", SwingConstants.CENTER);
         
 
         JTextField lengthField, widthField, areaField, perimeterField;
@@ -139,16 +138,33 @@ public class Main {
         calButton = new JButton("Calculate");
         exitButton = new JButton("Exit");
 
-        // Add labels to frame
-        frame.add(lengthLabel);
-        frame.add(widthLabel);
-        frame.add(areaLabel);
-        frame.add(perimeterLabel);
+        calButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    double length = Double.parseDouble(lengthField.getText());
+                    double width = Double.parseDouble(widthField.getText());
 
-        // Add fields to frame
+                    double area = length * width;
+                    double perimeter = 2 * (length + width);
+
+                    areaField.setText(String.valueOf(area));
+                    perimeterField.setText(String.valueOf(perimeter));
+                } catch (Exception exception) {
+                    JOptionPane.showMessageDialog(frame, "Please enter valid numbers.");
+                }
+            }
+        });
+
+        exitButton.addActionListener(e->System.exit(0));
+
+        // Add labels & fields to frame
+        frame.add(lengthLabel);
         frame.add(lengthField);
+        frame.add(widthLabel);
         frame.add(widthField);
+        frame.add(areaLabel);
         frame.add(areaField);
+        frame.add(perimeterLabel);
         frame.add(perimeterField);
 
         // Add buttons to frame
