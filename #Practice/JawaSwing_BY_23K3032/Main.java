@@ -1,5 +1,6 @@
 package JawaSwing_BY_23K3032;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -74,7 +75,7 @@ public class Main {
 
         /*
          * Will not proceed without accepting T&C by checking the checkbox
-         */
+         *//*
 
         JLabel label = new JLabel("Enter your name:");
         label.setBounds(20, 20, 150, 20);
@@ -103,9 +104,57 @@ public class Main {
         frame.add(textField);
         frame.add(button);
         frame.add(chkBox);
+
         frame.setSize(500, 500);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        */
+
+        /*
+         * Application for a rectangle calculator
+         */
+
+        frame.setTitle("Rectangle Area and Perimeter");
+        frame.setSize(400, 300);
+        frame.setLayout(new GridLayout(5, 2));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLabel lengthLabel, widthLabel, areaLabel, perimeterLabel;
+        lengthLabel = new JLabel("Enter the length:", SwingConstants.RIGHT);
+        widthLabel = new JLabel("Enter the width:", SwingConstants.RIGHT);
+        areaLabel = new JLabel("The area is:", SwingConstants.RIGHT);
+        perimeterLabel = new JLabel("Perimeter", SwingConstants.RIGHT);
+        
+
+        JTextField lengthField, widthField, areaField, perimeterField;
+        lengthField = new JTextField(10);   // can have 10 digits only
+        widthField = new JTextField(10);
+        areaField = new JTextField(10);
+        perimeterField = new JTextField(10);
+
+
+        JButton calButton, exitButton;
+        calButton = new JButton("Calculate");
+        exitButton = new JButton("Exit");
+
+        // Add labels to frame
+        frame.add(lengthLabel);
+        frame.add(widthLabel);
+        frame.add(areaLabel);
+        frame.add(perimeterLabel);
+
+        // Add fields to frame
+        frame.add(lengthField);
+        frame.add(widthField);
+        frame.add(areaField);
+        frame.add(perimeterField);
+
+        // Add buttons to frame
+        frame.add(calButton);
+        frame.add(exitButton);
+
+
         frame.setVisible(true);
     }
 }
