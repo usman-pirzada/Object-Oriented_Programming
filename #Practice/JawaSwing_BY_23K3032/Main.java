@@ -76,6 +76,7 @@ public class Main {
         /*
          * Will not proceed without accepting T&C by checking the checkbox
          *//*
+         *//*
 
         JLabel label = new JLabel("Enter your name:");
         label.setBounds(20, 20, 150, 20);
