@@ -5,10 +5,10 @@ import javax.swing.JFrame;
 public class Main {
     public static void main(String[] args) {
 
-        JFrame gui = new JFrame();
+        JFrame frame = new JFrame();
 
-        gui.setVisible(true);
-        gui.setTitle("title");
+        frame.setVisible(true);
+        frame.setTitle("title");
     }
 
 }
