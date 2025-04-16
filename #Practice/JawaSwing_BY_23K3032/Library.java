@@ -39,7 +39,7 @@ public class Library {
         StringBuilder sb = new StringBuilder();
 
         for(Book b : books) {
-            sb.append(b.displayBookInfo());
+            sb.append(b.displayBookInfo()).append("\n");
         }
 
         return String.valueOf(sb);
