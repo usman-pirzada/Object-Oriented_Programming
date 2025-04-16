@@ -1,4 +1,4 @@
-package JavaSwing;
+package JavaSwing_BroCode;
 
 import javax.swing.JFrame;
 

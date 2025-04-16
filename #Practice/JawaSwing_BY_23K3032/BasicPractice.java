@@ -63,7 +63,7 @@ public class BasicPractice {
 
         JButton button = new JButton("Exit");
         button.setBounds(100, 300, 100, 30);
-        button.addActionListener(e->System.exit(0));
+        button.addActionListener(e->System.exit(0));    // e-> is a lambda expression
         frame.add(button);
 
         frame.setSize(500, 500);
@@ -124,14 +124,16 @@ public class BasicPractice {
         lengthLabel = new JLabel("Enter the length:", SwingConstants.CENTER);
         widthLabel = new JLabel("Enter the width:", SwingConstants.CENTER);
         areaLabel = new JLabel("The area is:", SwingConstants.CENTER);
-        perimeterLabel = new JLabel("Perimeter", SwingConstants.CENTER);
+        perimeterLabel = new JLabel("Perimeter:", SwingConstants.CENTER);
         
 
         JTextField lengthField, widthField, areaField, perimeterField;
         lengthField = new JTextField(10);   // can have 10 digits only
         widthField = new JTextField(10);
         areaField = new JTextField(10);
+        areaField.setEditable(false);
         perimeterField = new JTextField(10);
+        perimeterField.setEditable(false);
 
 
         JButton calButton, exitButton;
@@ -155,7 +157,7 @@ public class BasicPractice {
             }
         });
 
-        exitButton.addActionListener(e->System.exit(0));
+        exitButton.addActionListener(e->System.exit(0));    // e-> is a lambda expression
 
         // Add labels & fields to frame
         frame.add(lengthLabel);
