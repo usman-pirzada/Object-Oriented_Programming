@@ -3,6 +3,7 @@ package JavaGUI_PhySession;
 import java.awt.*;
 import javax.swing.*;
 
+/*
 public class Main {
 
     static Library lib = new Library();
@@ -11,7 +12,7 @@ public class Main {
         
         /*
          * JOptionPane.INFORMATION_MESSAGE / ERROR_MESSAGE
-         */
+         *//*
 
         JFrame frame = new JFrame("Library Management System");
         frame.setSize(500, 500);
@@ -63,19 +64,27 @@ public class Main {
         
     }
 }
+*/
 
-/*
 
-public class LibrarySystemGUI {
+
+public class Main {
     private static Library library = new Library();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("📚 Library Management System");
         frame.setSize(500, 500);
+
+        // Center the frame on the screen
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int x = (screenSize.width - frame.getWidth()) / 2;
+        int y = (screenSize.height - frame.getHeight()) / 2;
+        frame.setLocation(x, y);
+
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel label = new JLabel("Library Management System");
+        JLabel label = new JLabel("📚Library Management System📚");
         label.setBounds(120, 10, 300, 30);
         label.setFont(new Font("Arial", Font.BOLD, 18));
         frame.add(label);
@@ -146,6 +155,3 @@ public class LibrarySystemGUI {
         }
     }
 }
-
-
- */

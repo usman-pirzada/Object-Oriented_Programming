@@ -24,7 +24,7 @@ public abstract  class LibraryManagement {
                         library.addBook(book);
                         JOptionPane.showMessageDialog(null, "Book Added Successfully!");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Unable to add book! (No input should be empty)");
+                        JOptionPane.showMessageDialog(null, "Unable to add book! (No input should be empty)", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
 
@@ -35,7 +35,7 @@ public abstract  class LibraryManagement {
                     if(foundBook != null) {
                         JOptionPane.showMessageDialog(null, "Book Found\n" + foundBook.displayBookInfo());
                     } else {
-                        JOptionPane.showMessageDialog(null, "Book NOT Found!");
+                        JOptionPane.showMessageDialog(null, "Book NOT Found!", "ERROR", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
 

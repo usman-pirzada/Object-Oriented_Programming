@@ -1,5 +1,6 @@
 package JavaGUI_PhySession;
 
+/*
 class Item {
     private String title, author, isbn;
 
@@ -33,10 +34,7 @@ class Item {
         return isbn;
     }
 }
-
-/*
-
-
+*/
 
 
 class Item {
@@ -54,9 +52,3 @@ class Item {
     public String getAuthor() { return author; }
     public String getISBN() { return ISBN; }
 }
-
-
-
-
-
- */
