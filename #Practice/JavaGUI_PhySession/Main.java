@@ -68,21 +68,20 @@ public class Main {
 
 
 
-public class Main {
+public abstract class Main {
     private static Library library = new Library();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("📚 Library Management System");
         frame.setSize(500, 500);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Center the frame on the screen
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (screenSize.width - frame.getWidth()) / 2;
         int y = (screenSize.height - frame.getHeight()) / 2;
         frame.setLocation(x, y);
-
-        frame.setLayout(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("📚Library Management System📚");
         label.setBounds(120, 10, 300, 30);
