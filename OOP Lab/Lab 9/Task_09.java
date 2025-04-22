@@ -91,11 +91,11 @@ class RideAnalytics {
 public class Task_09 {
     public static void main(String[] args) {
         
-        UberX uberX = new UberX(80, 20, 687645);
-        UberBlack uberBlack = new UberBlack(70, 9, 32146);
-        UberXL uberXL = new UberXL(100, 35, 15633);
+        UberRide uberX = new UberX(80, 20, 687645);
+        UberRide uberBlack = new UberBlack(70, 9, 32146);
+        UberRide uberXL = new UberXL(100, 35, 15633);
 
-        // Dispatch Driver
+        // Dispatch Drivers
         System.out.println("\nDispatching Drivers:");
         uberX.dispatchDriver();
         uberBlack.dispatchDriver();
