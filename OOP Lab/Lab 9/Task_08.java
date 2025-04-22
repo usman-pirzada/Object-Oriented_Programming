@@ -15,17 +15,17 @@ class EconomyRide implements RideService {
 
     @Override
     public void calculateFare() {
-
+        System.out.println("You have to pay Rs." + BASE_FARE * distance + " for the Economy ride.");
     }
 
     @Override
     public String getRideType() {
-        return null;
+        return "You are using Economy Ride";
     }
 
     @Override
     public void paymentMode() {
-
+        System.out.println("Payment can be made via debit card only for the Economy ride.");
     }
 }
 
@@ -38,17 +38,17 @@ class BusinessRide implements RideService {
 
     @Override
     public void calculateFare() {
-
+        System.out.println("You have to pay Rs." + BASE_FARE * distance + " for the Business ride.");
     }
 
     @Override
     public String getRideType() {
-        return null;
+        return "You are using Business Ride";
     }
 
     @Override
     public void paymentMode() {
-
+        System.out.println("Payment can be made via cash or debit card for the Business ride.");
     }
 }
 
@@ -61,17 +61,17 @@ class BikeRide implements RideService {
 
     @Override
     public void calculateFare() {
-
+        System.out.println("You have to pay Rs." + BASE_FARE * distance + " for the Bike ride.");
     }
 
     @Override
     public String getRideType() {
-        return null;
+        return "You are using Bike Ride";
     }
 
     @Override
     public void paymentMode() {
-
+        System.out.println("Payment can be made via cash only for the Bike ride.");
     }
 }
 
@@ -85,7 +85,8 @@ public class Task_08 {
         RideService[] rideServices = {economyRide, businessRide, bikeRide};
 
         for(RideService rideService : rideServices) {
-            rideService.getRideType();
+            System.out.println();
+            System.out.println(rideService.getRideType());
             rideService.calculateFare();
             rideService.paymentMode();
         }
