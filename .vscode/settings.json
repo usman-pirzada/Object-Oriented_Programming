@@ -1,0 +1,77 @@
+{
+    "update.enableWindowsBackgroundUpdates": false,
+    "update.mode": "manual",
+    "files.autoSaveDelay": 10,
+    "telemetry.telemetryLevel": "crash",
+    "extensions.autoUpdate": false,
+    "launch": {
+        "configurations": [
+
+        
+        ]
+    },
+    "cmake.showOptionsMovedNotification": false,
+    "security.workspace.trust.startupPrompt": "always",
+    "genieai.enableConversationHistory": true,
+    "sqldeveloper.telemetry.enabled": false,
+    "files.associations": {
+        "*.c": "c"
+    },
+    "git.autofetch": true,
+    "files.autoSave": "afterDelay",
+    "git.openRepositoryInParentFolders": "always",
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "scminput": false,
+        "markdown": true
+    },
+    "inlineChat.mode": "preview",
+    "[java]": {
+        "editor.defaultFormatter": "Oracle.oracle-java"
+    },
+
+    "editor.quickSuggestionsDelay": 0,
+    "explorer.confirmDelete": false,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.preserveFocus": false,
+    "terminal.integrated.localEchoStyle": "dim",
+    "redhat.telemetry.enabled": false,
+    "java.configuration.runtimes": [
+    
+    ],
+    "tabnine.experimentalAutoImports": false,
+    "settingsSync.ignoredSettings": [
+        "-java.configuration.runtimes"
+    ],
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.chat.localeOverride": "en",
+    "editor.minimap.enabled": false,
+    "jdk.jdkhome": "c:\\Program Files\\Java\\jdk-24",
+    "editor.fontSize": 16,
+    "tabnine.completionsLoadingIndicatorEnabled": false,
+    "tabnine.codeLensEnabled": false,
+    "github.copilot.chat.scopeSelection": true,
+    "remote.SSH.experimental.chat": false,
+    "git.confirmSync": false,
+    "jdk.serverVmOptions": [],
+    "workbench.preferredDarkColorTheme": "Darcula",
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "{git,gitlens,git-graph}:/**/*.{md,csv,svg}": "default"
+    },
+    "vscode-office.editorTheme": "Github Dark",
+    "vscode-office.openOutline": false,
+    "terminal.integrated.focusAfterRun": "terminal",
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
+    "diffEditor.codeLens": true,
+    "jdk.runConfig.vmOptions": "--enable-preview --source 23",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.startupEditor": "welcomePage",
+    "remoteHub.commitDirectlyWarning": "off",
+    
+}
