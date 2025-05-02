@@ -71,7 +71,7 @@
     "diffEditor.codeLens": true,
     "jdk.runConfig.vmOptions": "--enable-preview --source 23",
     "workbench.colorTheme": "Default Dark Modern",
-    "workbench.startupEditor": "welcomePage",
+    "workbench.startupEditor": "none",
     "remoteHub.commitDirectlyWarning": "off",
     
 }
