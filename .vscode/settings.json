@@ -73,5 +73,6 @@
     "workbench.colorTheme": "Default Dark Modern",
     "workbench.startupEditor": "none",
     "remoteHub.commitDirectlyWarning": "off",
+    "editor.hover.delay": 500
     
 }
