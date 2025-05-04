@@ -10,7 +10,7 @@ public class Task_02 {
             int factorial = 1;
 
             try {
-                if(string_num.isEmpty()) {
+                if(string_num.isBlank()) {
                     throw new IllegalArgumentException("You input nothing!");
                 }
 
