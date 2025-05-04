@@ -19,6 +19,7 @@ class Course {
         System.out.println("Name: " + courseName + " (" + courseCode + ")");
         System.out.println("Enrolled Students: " + enrolledStudents.size());
         System.out.println("Assignments: " + assignments.size());
+    }
 }
 
 class Assignment {
