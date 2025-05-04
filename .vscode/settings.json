@@ -73,6 +73,9 @@
     "workbench.colorTheme": "Default Dark Modern",
     "workbench.startupEditor": "none",
     "remoteHub.commitDirectlyWarning": "off",
-    "editor.hover.delay": 500
+    "editor.hover.delay": 500,
+    "java.project.sourcePaths": [
+        "OOP Lab/Lab 10"
+    ]
     
 }
