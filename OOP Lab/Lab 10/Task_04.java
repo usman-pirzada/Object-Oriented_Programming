@@ -1,3 +1,5 @@
+// Sentence Processor with Exception Handling
+
 import java.util.Scanner;
 
 public class Task_04 {
@@ -12,15 +14,28 @@ public class Task_04 {
                 throw new IllegalArgumentException("Your input is empty!");
             }
 
-            String words[] = sentence.
-            if()
+            String words[] = sentence.split("\\s+");
+            if(words.length < 2) {
+                throw new IllegalArgumentException("The sentence must be of two words atleast!");
+            }
 
+            // Modifying the sentence
+            StringBuilder modifiedSentence = new StringBuilder();
+            for(int i = words.length - 1; i >= 0; i--) {
+                modifiedSentence.append(words[i]);
+                if(i > 0) {
+                    modifiedSentence.append(" ");
+                }
+            }
+
+            System.out.println("Your original sentence: " + sentence);
+            System.out.println("Modified Sentence: " + modifiedSentence);
 
 
         } catch (NullPointerException e) {
             System.out.println("Error: " + e.getMessage());
         } catch (IllegalArgumentException e) {
-            System.out.println("Invalid Input: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Unexpected Error: " + e.getMessage());
         }
